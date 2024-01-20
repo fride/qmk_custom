@@ -444,6 +444,10 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
     case KC_MINS:
     case KC_SLSH:
     case KC_PIPE:
+    case KC_LCBR:
+    case KC_RCBR:
+    case KC_LBRC:
+    case KC_RBRC:
 
     case ___0___:
     case ___1___:

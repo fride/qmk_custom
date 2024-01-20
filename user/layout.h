@@ -3,6 +3,7 @@
 
 enum layers {
   ALPHA,  
+  ENGRAM,  
   UTIL,
   NUM,  
   NUM2,  
@@ -248,7 +249,7 @@ MAGIC STURDY
   ___V___, ___M___, ___L___, ___C___, ___P___,      ___B___, MAGIC,   ___U___, ___O___, _SQUOT_, \
   ___S___, ___T___, ___R___, ___D___, ___Y___,      ___F___, ___N___, ___E___, ___A___, ___I___, \
   ___X___, ___K___, ___J___, ___G___, ___W___,      ___Z___, ___H___, _COMMA_, __DOT__, KC_QUES, \
-           LT(UTIL,KC_TAB), NAV_SPC, ENT_CTL,       NUMWORD, OS_LSFT, LT(FUN,KC_DEL)
+           LT(UTIL,KC_BSPC), NAV_SPC, MAG_ALT,      ENT_CTL,  OS_LSFT, LT(FUN,KC_DEL)
 
 /*
   f r d p v  q j u o y 
@@ -259,7 +260,22 @@ MAGIC STURDY
   ___F___, ___R___, ___D___, ___P___, ___V___,      ___Q___, ___M___, ___U___, ___O___, ___Y___, \
   ___S___, ___N___, ___T___, ___C___, ___B___,      __DOT__, ___H___, ___E___, ___A___, ___I___, \
   ___Z___, ___J___, ___K___, ___G___, ___W___,      ___X___, ___L___, LPAREN, RPAREN, _COMMA_, \
-           LT(UTIL,KC_BSPC), NAV_SPC, MAG_ALT,      ENT_CTL,  OS_LSFT, LT(FUN,KC_DEL)
+           TO(ENGRAM), NAV_SPC, KC_Z,      ENT_CTL,  OS_LSFT, KC_Q
+
+/*
+Hands Down Neu
+  w  f  m  p  v   /  .  q  "  '  z
+  r  s  n  t  b   ,  a  e  i  h  j
+  x  c  l  d  g   -  u  o  y  k   
+*/
+
+#define _ENGRAM \
+  ___W___, ___F___, ___M___, ___P___, ___V___ ,        _SLASH_, __DOT__, ___Q___, _DQUOT_, _SQUOT_, \
+  ___R___, ___S___, ___N___, ___T___, ___B___,         _COMMA_, ___A___, ___E___, ___I___, ___H___, \
+  ___X___, ___C___, ___L___, ___D___, ___G___,         _MINUS_, ___U___, ___O___, ___Y___, ___K___, \
+                  TO(ALPHA), NAV_SPC, MAG_ALT,          ENT_CTL,  OS_LSFT, LT(FUN,KC_DEL)
+
+
 
 #define _UTIL \
   SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO,               KC_NO, KC_BSPC, KC_UP,   KC_DEL,  KC_NO, \
@@ -331,7 +347,7 @@ MAGIC STURDY
 ) \
         k15, k16, k17, k18, k19,        k22, k23, k24, k25, k26, \
         k29, k30, k31, k32, k33,        k36, k37, k38, k39, k40, \
-KC_NO,  k43, k44, k45, k46, k47,        k50, k51, k52, k53, k54, KC_NO, \
+KC_J,  k43, k44, k45, k46, k47,        k50, k51, k52, k53, k54, KC_Z, \
                   k59, k60, k61,        k64, k65, k66
 
 
