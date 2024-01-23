@@ -253,18 +253,24 @@ MAGIC STURDY
       LALT_T(KC_TAB), ENT_CTL, OS_LSFT, KC_Q
 
 /*
-Hands Down Neu
-  w  f  m  p  v   /  .  q  "  '  z
-  r  s  n  t  b   ,  a  e  i  h  j
-  x  c  l  d  g   -  u  o  y  k
-*/
+Engram
+  bB yY oO uU  '(  ")  lL dD wW vV zZ #$ @`
+  cC iI eE aA  ,;  .:  hH tT sS nN qQ 
+  gG xX jJ kK  -_  ?!  rR mM fF pP
 
-#define _ENGRAM                                                                \
-  ___W___, ___F___, ___M___, ___P___, ___V___, _SLASH_, __DOT__, ___Q___,      \
-      _DQUOT_, _SQUOT_, ___R___, ___S___, ___N___, ___T___, ___B___, _COMMA_,  \
-      ___A___, ___E___, ___I___, ___H___, ___X___, ___C___, ___L___, ___D___,  \
-      ___G___, _MINUS_, ___U___, ___O___, ___Y___, ___K___, TO(ALPHA),         \
-      NAV_SPC, MAG_ALT, ENT_CTL, OS_LSFT, LT(FUN, KC_DEL)
+  ___B___, ___Y___, ___O___, ___U___, _SQUOT_ ,        _DQUOT_, ___L___, ___D___, ___W___, ___V___, \
+  ___C___, ___I___, ___E___, ___A___, _COMMA_,         __DOT__, ___H___, ___T___, ___S___, ___N___, \
+  ___G___, ___X___, ___J___, ___K___, _MINUS_,         _QUEST_, ___R___, ___M___, ___F___, ___P___, \
+                  TO(ALPHA), NAV_SPC, MAG_ALT,          ENT_CTL,  OS_LSFT, LT(FUN,KC_DEL)
+*/
+#define _ENGRAM \
+  ___V___, ___W___, ___D___, ___L___, _SQUOT_ ,        _DQUOT_, ___U___, ___O___, ___Y___, ___B___, \
+  ___N___, ___S___, ___T___, ___H___, _COMMA_,         __DOT__, ___A___, ___E___, ___I___, ___C___, \
+  ___P___, ___F___, ___M___, ___R___, _MINUS_,         _QUEST_, ___K___, ___J___, ___X___, ___G___, \
+                  TO(ALPHA), NAV_SPC, MAG_ALT,          ENT_CTL,  OS_LSFT, LT(FUN,KC_DEL)
+
+
+
 
 #define _UTIL                                                                  \
   SW_APP, TAB_L, TAB_R, SW_WIN, KC_NO, KC_NO, KC_BSPC, KC_UP, KC_DEL, KC_NO,   \
