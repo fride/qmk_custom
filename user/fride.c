@@ -100,19 +100,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   }
 
   switch (keycode) {
-    case MAG_ALT:
+    case REP_SFT:
+    // TODO this only ever returns an n
      if (record->event.pressed) {
         if (record->tap.count > 0) {
           keyrecord_t press;
           press.event.type = KEY_EVENT;
           press.tap.count = 1;
           press.event.pressed = true;
-          process_repeat_key(QK_ALT_REPEAT_KEY, &press);
+          process_repeat_key(QK_REPEAT_KEY, &press);
           keyrecord_t release;
           release.event.type = KEY_EVENT;
           release.tap.count = 1;
           release.event.pressed = false;
-          process_repeat_key(QK_ALT_REPEAT_KEY, &release);
+          process_repeat_key(QK_REPEAT_KEY, &release);
           return PROCESS_RECORD_RETURN_TRUE;
         }
       }
@@ -413,56 +414,14 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
   // Exceptionally consider the following chords as holds, even though they
   // are on the same hand
   switch (tap_hold_keycode) {
+    case ENT_CTL:
     case COLON_SYM:
     case ESC_SYM:
-    case ENT_CTL:
-    case OS_LSFT:
-    case MAG_ALT:
       return true;    
     default:
       break;
   }
 
-// basically all non ascis
-  switch (other_keycode)
-  {
-    case KC_LPRN:
-    case KC_RPRN:
-    case KC_AT:
-    case KC_HASH:
-    case KC_DLR:
-    case KC_PERC:
-    case KC_CIRC:
-    case KC_PLUS:
-    case KC_PAST:
-    case KC_AMPR:
-    case KC_GRV:
-    case KC_BSLS:
-    case KC_EQL:
-    case KC_TILD:
-    case KC_UNDS:
-    case KC_MINS:
-    case KC_SLSH:
-    case KC_PIPE:
-    case KC_LCBR:
-    case KC_RCBR:
-    case KC_LBRC:
-    case KC_RBRC:
-
-    case ___0___:
-    case ___1___:
-    case ___2___:
-    case ___3___:
-    case ___4___:
-    case ___5___:
-    case ___6___:
-    case ___7___:
-    case ___8___:
-    case ___9___:
-    return true;  
-  default:
-    break;
-  }
   // Also allow same-hand holds when the other key is in the rows below the
   // alphas. I need the `% (MATRIX_ROWS / 2)` because my keyboard is split.
   if (other_record->event.key.row % (MATRIX_ROWS / 2) >= 4) {
@@ -480,7 +439,6 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
     case COLON_SYM:
     case ESC_SYM:
     case ENT_CTL:
-    case OS_LSFT:
       return 0;  // Bypass Achordion for these keys.
   }
 
@@ -500,26 +458,3 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
 //     return 100;
 //   }
 // }
-
-
-
-
-// ┌─────────────────────────────────────────────────┐
-// │ d e f i n e   k e y   o v e r r i d e s         │
-// └─────────────────────────────────────────────────┘
-
-const key_override_t ovr1 = ko_make_basic(MOD_MASK_SHIFT, _COMMA_, KC_QUES);
-const key_override_t ovr2 = ko_make_basic(MOD_MASK_SHIFT, __DOT__, KC_EXLM);
-const key_override_t ovr3 = ko_make_basic(MOD_MASK_SHIFT, KC_QUES, KC_EXLM);
-const key_override_t ovr4 = ko_make_basic(MOD_MASK_SHIFT, KC_LPRN, KC_LT);
-const key_override_t ovr5 = ko_make_basic(MOD_MASK_SHIFT, KC_RPRN, KC_GT);
-
-// This globally defines all key overrides to be used ├───────────┐
-const key_override_t **key_overrides = (const key_override_t *[]){
-  &ovr1,
-  &ovr2,
-  &ovr3,
-  &ovr4,
-  &ovr5,
-  NULL // Null terminate the array of overrides!
-};
