@@ -7,8 +7,8 @@
 */
 
  
-COMB(BOOT,            QK_BOOT,          ___V___, _SQUOT_)
-COMB(CMB_NUM,         NUMWORD,          ___E___, NAV_SPC)
+COMB(BOOT,            QK_BOOT,          ___V___, ___Q___)
+COMB(CMB_NUM,         NUMWORD,          NAV_SPC, OS_LSFT)
 COMB(CMB_Q,           ___Q___,          ___V___, ___M___)
 COMB(CMB_Z,           ___Z___,          ___W___, ___M___)
 COMB(CMB_CANCEL,	    CANCEL,		        ___S___, ___I___)

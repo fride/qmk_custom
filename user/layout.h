@@ -206,10 +206,10 @@ enum custom_keycodes {
 // layout wrappers inspired by https://github.com/pixelbreaker/qmk_userspace
 
 #define _STURDY \
-  ___V___, ___M___, ___L___, ___C___, ___P___,      ___B___, MAGIC,   ___U___, ___O___, _SQUOT_, \
+  ___V___, ___M___, ___L___, ___C___, ___P___,      ___B___, MAGIC,   ___U___, ___O___, ___Q___, \
   ___S___, ___T___, ___R___, ___D___, ___Y___,      ___F___, ___N___, ___E___, ___A___, ___I___, \
   ___X___, ___K___, ___J___, ___G___, ___W___,      ___Z___, ___H___, _COMMA_, __DOT__, KC_QUES, \
-           LT(UTIL,KC_TAB), NAV_SPC, OS_LSFT,       ENT_CTL,  BSPACE,  LT(FUN,KC_DEL)
+           LT(UTIL,KC_TAB), NAV_SPC, LT(NUM,KC_MINS),       LCTL_T(KC_QUOT),  OS_LSFT, LT(FUN,KC_DEL)
 
 #define _UTIL \
   SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO,               KC_NO, KC_BSPC, KC_UP,   KC_DEL,  KC_NO, \
