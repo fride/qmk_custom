@@ -1,8 +1,8 @@
 /*
   ___F___, ___R___, ___D___, ___P___, ___V___,      ___Q___, ___M___, ___U___, ___O___, ___Y___, \
-  ___S___, ___N___, ___T___, ___C___, ___B___,      _SLASH_, ___H___, ___E___, ___A___, ___I___, \
-  ___Z___, ___J___, ___K___, ___G___, ___W___,      ___X___, ___L___, LPAREN, RPAREN, _SQUOT_, \
-           LT(UTIL,KC_BSPC), NAV_SPC, NUMWORD,       ENT_CTL,  OS_LSFT, LT(FUN,KC_DEL)
+  ___S___, ___N___, ___T___, ___C___, ___B___,      __DOT__, ___H___, ___E___, ___A___, ___I___, \
+  ___Z___, ___J___, ___K___, ___G___, ___W___,      ___X___, ___L___, KC_SCLN, KC_QUOT, _COMMA_, \
+           LT(UTIL,KC_BSPC), NAV_SPC, MAG_ALT,      ENT_CTL,  OS_LSFT, LT(FUN,KC_DEL)
 */
 
  
@@ -10,9 +10,6 @@ COMB(BOOT,            QK_BOOT,          ___F___, ___Y___)
 COMB(CMB_NUM,         NUMWORD,          OS_LSFT, NAV_SPC)
 COMB(CMB_Q,           ___Q___,          ___V___, ___M___)
 COMB(CMB_CANCEL,	    CANCEL,		        ___S___, ___I___)
-
-
-
 
 
 COMB(CMB_AT,           KC_AT,          ___R___, ___N___)
@@ -37,6 +34,7 @@ COMB(CMB_PIPE,         KC_PIPE,        ___A___, KC_QUOT)
 
 
 // Horizontal
+COMB(CMB_LT,          KC_ESC,        ___R___,   ___D___)
 COMB(CMB_ESC,         KC_ESC,        ___M___,   ___L___)
 COMB(CMB_TAB,         KC_TAB,        ___N___,   ___T___, ___C___)
 COMB(CMB_ENTER,       KC_ENTER,      ___H___,   ___E___, ___A___)
