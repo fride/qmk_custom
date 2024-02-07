@@ -3,14 +3,16 @@
 # thereby completely bypassing this Makefile and our keymap header/footer!
 
 TOPLEVEL=`git rev-parse --show-toplevel`
-KEYBOARD=totem
+KEYBOARD="totem"
 KEYMAP=fride
 USER_DIR=$(realpath ./user)
 TOTEM_DIR=$(realpath ./totem)
+PLANCK_DIR=$(realpath ./planck)
 QMK_HOME=/Users/jgf/code/private/qmk_firmware
 QMK_USER_DIR=$(QMK_HOME)/users/fride
 QMK_KEYBOARDS_DIR=$(QMK_HOME)/keyboards
 QMK_TOTEM_DIR=$(QMK_KEYBOARDS_DIR)/totem
+QMK_PLANCK_DIR=$(QMK_KEYBOARDS_DIR)/planck
 
 $(QMK_USER_DIR):
 	ln -s $(USER_DIR) $(QMK_USER_DIR)
@@ -18,12 +20,15 @@ $(QMK_USER_DIR):
 $(QMK_TOTEM_DIR):
 	ln -s $(TOTEM_DIR) $(QMK_TOTEM_DIR)
 
+$(QMK_PLANCK_DIR):
+	ln -s $(PLANCK_DIR) $(QMK_PLANCK_DIR)
+
 all: flash
 
 flash: build
 	qmk flash -kb $(KEYBOARD) -km $(KEYMAP)
 
-build: $(QMK_USER_DIR) $(QMK_TOTEM_DIR) 
+build: $(QMK_USER_DIR) $(QMK_TOTEM_DIR) $(QMK_PLANCK_DIR)
 	test ! -e keymap.json # see comment at the top of this Makefile
 	qmk compile -kb $(KEYBOARD) -km $(KEYMAP) -j 0
 

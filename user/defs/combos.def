@@ -35,7 +35,7 @@ COMB(CMB_PIPE,         KC_PIPE,        ___A___, KC_QUOT)
 
 // Horizontal
 COMB(CMB_LT,          KC_ESC,        ___R___,   ___D___)
-COMB(CMB_ESC,         KC_ESC,        ___M___,   ___L___)
+COMB(CMB_ESC,         KC_ESC,        ___T___,   ___C___)
 COMB(CMB_TAB,         KC_TAB,        ___N___,   ___T___, ___C___)
 COMB(CMB_ENTER,       KC_ENTER,      ___H___,   ___E___, ___A___)
 
