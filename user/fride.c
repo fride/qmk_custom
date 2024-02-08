@@ -100,7 +100,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   }
 
   switch (keycode) {
-    case REP_SFT:
+    case MAG_SFT:
     // TODO this only ever returns an n
      if (record->event.pressed) {
         if (record->tap.count > 0) {
@@ -108,12 +108,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
           press.event.type = KEY_EVENT;
           press.tap.count = 1;
           press.event.pressed = true;
-          process_repeat_key(QK_REPEAT_KEY, &press);
+          process_repeat_key(QK_ALT_REPEAT_KEY, &press);
           keyrecord_t release;
           release.event.type = KEY_EVENT;
           release.tap.count = 1;
           release.event.pressed = false;
-          process_repeat_key(QK_REPEAT_KEY, &release);
+          process_repeat_key(QK_ALT_REPEAT_KEY, &release);
           return PROCESS_RECORD_RETURN_TRUE;
         }
       }

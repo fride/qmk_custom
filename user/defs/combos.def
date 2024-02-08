@@ -8,17 +8,12 @@
 
  
 COMB(BOOT,            QK_BOOT,          ___V___, ___Q___)
-COMB(CMB_NUM,         NUMWORD,          NAV_SPC, OS_LSFT)
-COMB(CMB_Q,           ___Q___,          ___V___, ___M___)
-COMB(CMB_Z,           ___Z___,          ___W___, ___M___)
-COMB(CMB_CANCEL,	    CANCEL,		        ___S___, ___I___)
-COMB(CMB_ENTER,	      KC_ENTER,		      ___N___, ___E___, ___A___)
+COMB(CMB_NUM,         NUMWORD,          NAV_SPC, MAG_SFT)
+COMB(CMB_CANCEL,	    CANCEL,		        ___N___, ___I___)
+COMB(CMB_ENTER,	      KC_ENTER,		      ___H___, ___A___, ___E___)
 
 
-
-// COMB(CMB_ESC,         ESC_SYM,          ___T___, ___H___)
-// COMB(CMB_COLON,       KC_COLON,         ___N___, ___A___)
-// COMB(CMB_SCLN,        KC_SCLN,          ___N___, KC_LPRN)
+COMB(CMB_ESC,         ESC_SYM,          ___T___, ___S___)
 
 
 // for SturdY!
@@ -42,11 +37,10 @@ COMB(CMB_MINS,         KC_MINS,        ___N___, ___H___)
 COMB(CMB_SLSH,         KC_SLSH,        ___E___, _COMMA_)
 COMB(CMB_PIPE,         KC_PIPE,        ___A___, __DOT__)
 
-
 // parenths....
-COMB(CMB_LBRC,         KC_LBRC,        MAGIC,   ___U___)
-COMB(CMB_RBRC,         KC_RBRC,        ___U___, ___O___)
-COMB(CMB_LPRN,         KC_LPRN,        ___N___, ___E___)
-COMB(CMB_RPRN,         KC_RPRN,        ___E___, ___A___)
-COMB(CMB_LCBR,         KC_LCBR,        ___H___, _COMMA_)
+COMB(CMB_LBRC,         KC_LBRC,        ___F___, ___O___)
+COMB(CMB_RBRC,         KC_RBRC,        ___O___, ___U___)
+COMB(CMB_LPRN,         KC_LPRN,        ___H___, ___A___)
+COMB(CMB_RPRN,         KC_RPRN,        ___A___, ___E___)
+COMB(CMB_LCBR,         KC_LCBR,        ___P___, _COMMA_)
 COMB(CMB_RCBR,         KC_RCBR,        _COMMA_, __DOT__)
