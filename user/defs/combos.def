@@ -1,42 +1,19 @@
 
 
  
-COMB(BOOT,            QK_BOOT,          ___V___, ___Q___)
+COMB(BOOT,            QK_BOOT,          KC_B, KC_V)
 COMB(CMB_NUM,         NUMWORD,          NAV_SPC, MAG_SFT)
 COMB(CMB_CANCEL,	    CANCEL,		        ___N___, ___I___)
 COMB(CMB_ENTER,	      KC_ENTER,		      ___H___, ___A___, ___E___)
 
 
-COMB(CMB_ESC,         ESC_SYM,          ___T___, ___S___)
+COMB(CMB_ESC,         ESC_SYM,          KC_A, KC_E)
+// for the totem!?
+COMB(CMB_Q,           KC_Q,             KC_B, KC_Y)
+COMB(CMB_Z,           KC_Z,             KC_Y, KC_O)
 
+COMB(CMB_KA,          KA,               MEH_T(KC_K), KC_J)
+COMB(CMB_KU,          KU,               MEH_T(KC_K), KC_X)
+COMB(CMB_KAU,         KAU,              MEH_T(KC_K), KC_J,KC_X)
 
-// for SturdY!
-COMB(CMB_AT,           KC_AT,          ___M___, ___T___)
-COMB(CMB_HASH,         KC_HASH,        ___L___, ___R___)
-COMB(CMB_DLR,          KC_DLR,         ___C___, ___D___)
-COMB(CMB_PERC,         KC_PERC,        ___P___, ___Y___)
-
-COMB(CMB_CIRC,         KC_CIRC,        ___B___, ___F___)
-COMB(CMB_PLUS,         KC_PLUS,        MAGIC,   ___N___)
-
-COMB(CMB_PAST,         KC_PAST,        ___U___, ___E___)
-COMB(CMB_AMPR,         KC_AMPR,        ___O___, ___A___)
-
-COMB(CMB_GRV,          KC_GRV,         ___N___, ___J___)
-COMB(CMB_BSLS,         KC_BSLS,        ___T___, ___K___)
-COMB(CMB_EQL,          KC_EQL,         ___C___, ___G___)
-COMB(CMB_TILD,         KC_TILD,        ___B___, ___W___)
-
-COMB(CMB_UNDS,         KC_UNDS,        __DOT__, ___X___)
-COMB(CMB_MINS,         KC_MINS,        ___H___, ___L___)
-COMB(CMB_SLSH,         KC_SLSH,        ___E___, LPAREN)
-COMB(CMB_PIPE,         KC_PIPE,        ___A___, RPAREN)
-
-// parenths....
-COMB(CMB_LBRC,         KC_LBRC,        ___F___, ___O___)
-COMB(CMB_RBRC,         KC_RBRC,        ___O___, ___U___)
-COMB(CMB_LPRN,         KC_LPRN,        ___H___, ___A___)
-COMB(CMB_RPRN,         KC_RPRN,        ___A___, ___E___)
-COMB(CMB_LCBR,         KC_LCBR,        ___P___, _COMMA_)
-COMB(CMB_RCBR,         KC_RCBR,        _COMMA_, __DOT__)
 

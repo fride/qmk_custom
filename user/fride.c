@@ -118,6 +118,33 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         }
       }
       break;
+    case KA:
+      if (record->event.pressed) {
+        if (shifted) {
+          SEND_STRING("Ka");
+        } else {
+          SEND_STRING("ka");
+        }
+        return false;
+      }
+    case KU:
+      if (record->event.pressed) {
+        if (shifted) {
+          SEND_STRING("Ku");
+        } else {
+          SEND_STRING("ku");
+        }
+        return false;
+      }
+    case KAU:
+      if (record->event.pressed) {
+        if (shifted) {
+          SEND_STRING("Kau");
+        } else {
+          SEND_STRING("kau");
+        }
+        return false;
+      }
     case LPAREN:
       if (record->event.pressed) {
         if (shifted) {

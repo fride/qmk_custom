@@ -99,6 +99,9 @@ enum custom_keycodes {
 
   BI_PH,
 
+  KA,
+  KAU,
+  KU,
 };
 
 
@@ -205,13 +208,35 @@ enum custom_keycodes {
 // ----------------
 // layout wrappers inspired by https://github.com/pixelbreaker/qmk_userspace
 
+/*
+Hands down - again ;)
+xz  wq m  g  j   #@ .: / * "! '?  
+s  c  n  t  k   ,; a  e  i  h  
+b  p  l  d  v   -+ u  o  y  f  
+r   ␣  
+*/
+#define ______________HANDS_DOWN_L1________________ KC_Z,         RALT_T(KC_W), KC_M,         KC_G,         KC_J
+#define ______________HANDS_DOWN_L2________________ LCTL_T(KC_S), LALT_T(KC_C), LGUI_T(KC_N), LSFT_T(KC_T), KC_K
+#define ______________HANDS_DOWN_L3________________ KC_B,         KC_P,         KC_L,         MEH_T(KC_D),  KC_V
+
+#define ______________HANDS_DOWN_R1________________ KC_HASH, KC_DOT,       KC_SLSH,      RALT_T(KC_DQUO), KC_QUOT
+#define ______________HANDS_DOWN_R2________________ KC_COMM, RSFT_T(KC_A), RGUI_T(KC_E), LALT_T(KC_I),    RCTL_T(KC_H)
+#define ______________HANDS_DOWN_R3________________ KC_MINS, MEH_T(KC_U),  KC_O,         KC_Y,            KC_F
 
 
-#define _GRAPHITE \
-  ___B___, ___L___, ___D___, ___W___, ___Z___,      _SQUOT_, ___F___, ___O___, ___U___, ___J___, \
-  ___N___, ___R___, ___T___, ___S___, ___G___,      ___Y___, ___H___, ___A___, ___E___, ___I___, \
-  ___Q___, ___X___, ___M___, ___C___, ___V___,      ___K___, ___P___, _COMMA_, __DOT__, KC_SLSH, \
-             NAV_SPC, LT(SYM,KC_BSPC), LALT_T(KC_ENTER)  ,          LCTL_T(KC_ENTER),  NUMWORD, MAG_SFT
+#define ________________ENGRAMM_L1_________________ KC_V,         RALT_T(KC_W), KC_D,         KC_L,         KC_SCLN
+#define ________________ENGRAMM_L2_________________ LCTL_T(KC_N), LALT_T(KC_S), LGUI_T(KC_T), LSFT_T(KC_H), KC_COMM
+#define ________________ENGRAMM_L3_________________ KC_P,         KC_F,         KC_M,         MEH_T(KC_R),   KC_MINS
+
+#define ________________ENGRAMM_R1_________________ KC_QUOT, KC_U,         KC_O,         RALT_T(KC_Y), KC_B
+#define ________________ENGRAMM_R2_________________ KC_DOT,  RSFT_T(KC_A), RGUI_T(KC_E), LALT_T(KC_I), RCTL_T(KC_C)
+#define ________________ENGRAMM_R3_________________ KC_SLSH, MEH_T(KC_K),  KC_J,         KC_X,         KC_G
+
+#define _ENGRAM \
+  ________________ENGRAMM_L1_________________, ________________ENGRAMM_R1_________________, \
+  ________________ENGRAMM_L2_________________, ________________ENGRAMM_R2_________________, \
+  ________________ENGRAMM_L3_________________, ________________ENGRAMM_R3_________________, \
+             NUMWORD, LT(SYM,KC_BSPC), KC_ENTER,          LCTL_T(KC_ENTER),  NAV_SPC, LT(SYM,KC_TAB)
 
 #define _UTIL \
   SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO,               KC_NO, KC_BSPC, KC_UP,   KC_DEL,  KC_NO, \
@@ -224,6 +249,16 @@ enum custom_keycodes {
   ___7___ ,___5___ ,___3___ ,___1___, KC_BSLS      ,___0___, ___0___,  ___2___, ___4___, ___6___ , \
   _______ ,KC_LT   ,KC_GT,   ___9___, _______      ,KC_SLSH, ___8___,  KC_LPRN, KC_RPRN, __DOT__, \
                     _______, _______, _______      ,_______, _______, _______
+
+
+#define _________________NUMBER_L1_________________ _______, KC_D,    KC_E,    KC_F,    KC_UNDS
+#define _________________NUMBER_L2_________________ KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_MEH
+#define _________________NUMBER_L3_________________ OS_LSFT, G(KC_Z), _______, KC_SPC,  KC_TAB
+
+#define _________________NUMBER_R1_________________ KC_PERC, KC_7, KC_8, KC_9, KC_COLN
+#define _________________NUMBER_R2_________________ KC_PLUS, KC_4, KC_5, KC_6, KC_MINS
+#define _________________NUMBER_R3_________________ KC_PAST, KC_1, KC_2, KC_3, KC_SLSH
+        
 
 #define _NUM2 \
   KC_PLUS ,___7___, ___8___, ___9___, KC_PAST      ,_______, _______, _______, _______, _COMMA_, \
@@ -256,35 +291,7 @@ enum custom_keycodes {
                                 _______, _______, _______      ,_______, _______, _______
 
 
-// Layout aliases for json keymap
-#define LAYOUT_REDOX(...) LAYOUT(__VA_ARGS__)
 
-#define CONV_REDOX( \
-  k15, k16, k17, k18, k19,        k22, k23, k24, k25, k26, \
-  k29, k30, k31, k32, k33,        k36, k37, k38, k39, k40, \
-  k43, k44, k45, k46, k47,        k50, k51, k52, k53, k54, \
-            k59, k60, k61,        k64, k65, k66 \
-) \
-     QK_BOOT   ,KC_7    ,KC_5    ,KC_3    ,KC_1    ,KC_9    ,                                            KC_8    ,KC_0    ,KC_2    ,KC_4    ,KC_6  ,KC_NO   , \
-     KC_GRV  ,k15     ,k16     ,k17     ,k18     ,k19     ,KC_F11   ,                         KC_F12  ,k22     ,k23     ,k24     ,k25     ,k26     ,KC_BSLS , \
-     KC_MINS ,k29     ,k30     ,k31     ,k32     ,k33     ,KC_DLR  ,                         KC_DLR   ,k36     ,k37     ,k38     ,k39     ,k40 ,    KC_EQL , \
-     OS_LSFT ,k43     ,k44     ,k45     ,k46     ,k47     ,KC_NO   ,QK_BOOT ,        QK_BOOT ,KC_NO   ,k50     ,k51     ,k52     ,k53     ,k54     ,KC_RSFT , \
-     KC_LCTL ,KC_LALT ,KC_DOWN ,KC_UP   ,     k59     ,    k60     ,k61     ,        k64      ,k65     ,k66     ,KC_LEFT ,KC_RIGHT ,KC_NO   ,KC_NO 
-
-#define REDOX(k) CONV_REDOX(k)
-
-#define LAYOUT_TOTEM(...) LAYOUT(__VA_ARGS__)
-#define TOTEM(k) CONV_TOTEM(k)
-#define CONV_TOTEM( \
-  k15, k16, k17, k18, k19,        k22, k23, k24, k25, k26, \
-  k29, k30, k31, k32, k33,        k36, k37, k38, k39, k40, \
-  k43, k44, k45, k46, k47,        k50, k51, k52, k53, k54, \
-            k59, k60, k61,        k64, k65, k66 \
-) \
-        k15, k16, k17, k18, k19,        k22, k23, k24, k25, k26, \
-        k29, k30, k31, k32, k33,        k36, k37, k38, k39, k40, \
-KC_NO,  k43, k44, k45, k46, k47,        k50, k51, k52, k53, k54, KC_NO, \
-                  k59, k60, k61,        k64, k65, k66
 
 
 // -------------------------------------------------------------------------------------------------------- //
