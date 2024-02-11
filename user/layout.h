@@ -1,21 +1,12 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
-enum layers {
-  ALPHA,  
-  UTIL,
-  NUM,  
-  NUM2,  
-  SYM,
-  WINNAV,
-  FUN,
-  ALWAYS
-};
+enum layers { ALPHA, UTIL, NUM, NUM2, SYM, WINNAV, FUN, ALWAYS };
 
 // Tap Dance keycodes
 enum td_keycodes {
-  ALT_LP  // Our example key: `LALT` when held, `(` when tapped. Add additional
-          // keycodes for each tapdance.
+  ALT_LP // Our example key: `LALT` when held, `(` when tapped. Add additional
+         // keycodes for each tapdance.
 };
 
 enum custom_keycodes {
@@ -25,7 +16,7 @@ enum custom_keycodes {
   CIRC,
   GRV,
   TILD,
-  DELIM,  // on the NUM word layer
+  DELIM, // on the NUM word layer
 
   LPAREN,
   RPAREN,
@@ -40,7 +31,7 @@ enum custom_keycodes {
   KEBAB,
 
   // Layer management
-  CANCEL,  // Cancel SYMWORD and NUMWORD
+  CANCEL, // Cancel SYMWORD and NUMWORD
   CLEAR,  // Clear all WORD, one-shots and reset to BASE
   MG_THE,
   MG_ION,
@@ -52,11 +43,11 @@ enum custom_keycodes {
   M_SENTENCE,
 
   // N-Shot Mods
-  OS_LSFT,  // OS Mods
-  OS_LCTL,  // OS Mods
-  OS_LALT,  // OS Mods
-  OS_LGUI,  // OS Mods
-  TS_LCTL,  // Two-shot ctrl
+  OS_LSFT, // OS Mods
+  OS_LCTL, // OS Mods
+  OS_LALT, // OS Mods
+  OS_LGUI, // OS Mods
+  TS_LCTL, // Two-shot ctrl
 
   // used below in the thumb
   NEXTSEN,
@@ -73,7 +64,7 @@ enum custom_keycodes {
   KC_SCH,
 
   COPY_PASTE,
-  SP_MOD,  // oneshot modifier and tap, nav layer on hold. See 'NAV_MOD'
+  SP_MOD, // oneshot modifier and tap, nav layer on hold. See 'NAV_MOD'
   SP_SFT,
   CPYPASTE,
 
@@ -100,7 +91,6 @@ enum custom_keycodes {
   BI_PH,
 
 };
-
 
 #define META_DEAD LT(UTIL, KC_LGUI)
 
@@ -132,9 +122,10 @@ enum custom_keycodes {
 #define REPEAT QK_REPEAT_KEY
 #define REP_SFT LSFT_T(QK_REPEAT_KEY)
 #define ENT_CTL LCTL_T(KC_ENTER)
+#define MAG_ALT LALT_T(MAGIC)
 
-#define ESC_SYM LT(SYM,KC_ESC)
-#define COLON_SYM LT(SYM,KC_COLON)
+#define ESC_SYM LT(SYM, KC_ESC)
+#define COLON_SYM LT(SYM, KC_COLON)
 
 #define M_LT LT(NUM, KC_LT)
 #define M_GT LT(SYM, KC_GT)
@@ -146,28 +137,28 @@ enum custom_keycodes {
 #define OS_SYM OSL(SYM)
 #define OS_MEH OSM(MOD_MEH)
 #define UM_CTL LCTL_T(KC_U)
-#define BSPACE LT(NUM,KC_BSPC)
+#define BSPACE LT(NUM, KC_BSPC)
 
-#define ___A___ KC_A
+#define ___A___ RSFT_T(KC_A)
 #define ___B___ KC_B
-#define ___C___ KC_C
-#define ___D___ LSFT_T(KC_D)
+#define ___C___ LALT_T(KC_C)
+#define ___D___ MEH_T(KC_D)
 #define ___E___ RGUI_T(KC_E)
 #define ___F___ KC_F
 #define ___G___ KC_G
-#define ___H___ KC_H
-#define ___I___ RCTL_T(KC_I)
+#define ___H___ RCTL_T(KC_H)
+#define ___I___ RALT_T(KC_I)
 #define ___J___ KC_J
 #define ___K___ KC_K
-#define ___L___ KC_L
+#define ___L___ LALT_T(KC_L)
 #define ___M___ KC_M
-#define ___N___ RSFT_T(KC_N)
-#define ___O___ KC_O
+#define ___N___ LGUI_T(KC_N)
+#define ___O___ MEH_T(KC_O)
 #define ___P___ KC_P
 #define ___Q___ KC_Q
-#define ___R___ LGUI_T(KC_R)
+#define ___R___ KC_R
 #define ___S___ LCTL_T(KC_S)
-#define ___T___ LALT_T(KC_T)
+#define ___T___ LSFT_T(KC_T)
 #define ___U___ KC_U
 #define ___V___ KC_V
 #define ___W___ KC_W
@@ -184,32 +175,39 @@ enum custom_keycodes {
 #define _SEMIC_ KC_SCLN
 #define _QUEST_ KC_QUES
 
-#define ___0___ KC_0
-#define ___2___ KC_2
-#define ___4___ KC_4
-#define ___6___ KC_6
-#define ___8___ KC_8
+#define ___0___ RGUI_T(KC_0)
+#define ___2___ RALT_T(KC_2)
+#define ___4___ RCTL_T(KC_4)
+#define ___6___ RSFT_T(KC_6)
+#define ___8___ MEH_T(KC_8)
 
-#define ___1___ KC_1
-#define ___3___ KC_3
-#define ___5___ KC_5
-#define ___7___ KC_7
-#define ___9___ KC_9
+#define ___1___ LGUI_T(KC_1)
+#define ___3___ LALT_T(KC_3)
+#define ___5___ LCTL_T(KC_5)
+#define ___7___ LSFT_T(KC_7)
+#define ___9___ MEH_T(KC_9)
 
 #define _______ KC_TRNS
 #define _XXXXX_ KC_NO
-#define ___________________________________________ \
+#define ___________________________________________                            \
   _______, _______, _______, _______, _______
 
-
+// clang-format off
 // ----------------
 // layout wrappers inspired by https://github.com/pixelbreaker/qmk_userspace
 
-#define _STURDY \
-  ___V___, ___M___, ___L___, ___C___, ___P___,      ___B___, MAGIC,   ___U___, ___O___, _SQUOT_, \
-  ___S___, ___T___, ___R___, ___D___, ___Y___,      ___F___, ___N___, ___E___, ___A___, ___I___, \
-  ___X___, ___K___, ___J___, ___G___, ___W___,      ___Z___, ___H___, _COMMA_, __DOT__, KC_QUES, \
-           LT(UTIL,KC_TAB), NAV_SPC, ENT_CTL,       NUMWORD,  OS_LSFT, LT(FUN,KC_DEL)
+/*
+xz  wq m  g  j   #@ .: /* "! '?  
+s  c  n  t  k   ,; a  e  i  h  
+b  p  l  d  v   -+ u  o  y  f  
+r   ␣  
+*/
+#define _NEU_VB \
+  ___Z___, ___W___, ___M___, ___G___, ___J___,      KC_HASH, __DOT__, _SLASH_, _DQUOT_, _SQUOT_, \
+  ___S___, ___C___, ___N___, ___T___, ___K___,      _COMMA_, ___A___, ___E___, ___I___, ___H___, \
+  ___B___, ___P___, ___L___, ___D___, ___V___,      KC_MINS, ___U___, ___O___, ___Y___, ___F___, \
+           LT(UTIL,KC_Q), ___R___,  MAG_ALT,       ENT_CTL, NAV_SPC, LT(FUN,KC_X)
+
 
 #define _UTIL \
   SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO,               KC_NO, KC_BSPC, KC_UP,   KC_DEL,  KC_NO, \
@@ -218,9 +216,9 @@ enum custom_keycodes {
                     KC_SPC, KC_SPC,   KC_F19            , _______, _XXXXX_, _______
 
 #define _NUM \
-  _______ ,KC_AT   ,KC_HASH, KC_DLR,  KC_PERC      ,KC_CIRC, KC_PLUS,  KC_PAST, KC_AMPR, _COMMA_, \
-  ___7___ ,___5___ ,___3___ ,___1___, ___9___      ,___8___, ___0___,  ___2___, ___4___, ___6___ , \
-  _______ ,KC_GRV ,KC_BSLS,  KC_EQL,  KC_TILD      ,KC_UNDS, KC_MINS,  _______, _______, _______, \
+  KC_GRV  ,KC_EQL  ,KC_MINS, KC_UNDS ,KC_PAST      ,KC_BSLS, KC_HASH,  KC_AMPR, KC_PIPE, KC_TILD, \
+  ___7___ ,___5___ ,___3___ ,___1___ ,KC_PLUS      ,_SLASH_, ___0___,  ___2___, ___4___, ___6___ , \
+  KC_CIRC ,KC_COLON,KC_SCLN ,___9___ ,KC_LT        ,KC_GT, ___8___,  _COMMA_, __DOT__, __DOT__, \
                     _______, _______, _______      ,_______, _______, _______
 
 #define _NUM2 \
@@ -255,7 +253,7 @@ enum custom_keycodes {
 
 
 // Layout aliases for json keymap
-#define LAYOUT_redox(...) LAYOUT(__VA_ARGS__)
+#define LAYOUT_REDOX(...) LAYOUT(__VA_ARGS__)
 
 #define CONV_REDOX( \
   k15, k16, k17, k18, k19,        k22, k23, k24, k25, k26, \
@@ -263,11 +261,11 @@ enum custom_keycodes {
   k43, k44, k45, k46, k47,        k50, k51, k52, k53, k54, \
             k59, k60, k61,        k64, k65, k66 \
 ) \
-     KC_NO   ,KC_7    ,KC_5    ,KC_3    ,KC_1    ,KC_9    ,                                            KC_8    ,KC_0    ,KC_2    ,KC_4    ,KC_6  ,KC_NO   , \
-     KC_TAB  ,k15     ,k16     ,k17     ,k18     ,k19     ,KC_F11   ,                         KC_F12  ,k22     ,k23     ,k24     ,k25     ,k26     ,KC_BSLS , \
-     k15     ,k29     ,k30     ,k31     ,k32     ,k33     ,KC_DLR  ,                         KC_DLR   ,k36     ,k37     ,k38     ,k39     ,k40 ,    k26 , \
+     QK_BOOT   ,KC_7    ,KC_5    ,KC_3    ,KC_1    ,KC_9    ,                                            KC_8    ,KC_0    ,KC_2    ,KC_4    ,KC_6  ,KC_NO   , \
+     KC_GRV  ,k15     ,k16     ,k17     ,k18     ,k19     ,KC_F11   ,                         KC_F12  ,k22     ,k23     ,k24     ,k25     ,k26     ,KC_Q , \
+     KC_EQL  ,k29     ,k30     ,k31     ,k32     ,k33     ,KC_DLR  ,                         KC_DLR   ,k36     ,k37     ,k38     ,k39     ,k40 ,    KC_Z , \
      KC_LSFT ,k43     ,k44     ,k45     ,k46     ,k47     ,KC_NO   ,QK_BOOT ,        QK_BOOT ,KC_NO   ,k50     ,k51     ,k52     ,k53     ,k54     ,KC_RSFT , \
-     KC_LCTL ,KC_LALT ,KC_LEFT ,KC_RIGHT   ,     k59     ,    k60     ,k61     ,        k64      ,k65     ,k66     ,KC_LBRC ,KC_RBRC ,KC_NO   ,KC_NO 
+     KC_LCTL ,KC_LALT ,KC_LEFT ,KC_RIGHT   ,     k59     ,    k60     ,k61     ,        k64      ,k65     ,k66     ,KC_LBRC ,KC_RBRC ,KC_NO   ,KC_NO
 
 #define REDOX(k) CONV_REDOX(k)
 
