@@ -46,3 +46,10 @@ clobber: clean
 	rm -fv $(TOPLEVEL)/$$( echo $(KEYBOARD) | tr / _ )_$(KEYMAP).*
 
 .PHONY: clean clobber build flash build_planck
+
+
+redox : KEYBOARD="redox/rev1"
+redox : flash
+
+totem : KEYBOARD="totem"
+totem : flash
