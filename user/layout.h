@@ -1,12 +1,21 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
-enum layers { ALPHA, UTIL, NUM, NUM2, SYM, WINNAV, FUN, ALWAYS };
+enum layers {
+  ALPHA,  
+  UTIL,
+  NUM,  
+  NUM2,  
+  SYM,
+  WINNAV,
+  FUN,
+  ALWAYS
+};
 
 // Tap Dance keycodes
 enum td_keycodes {
-  ALT_LP // Our example key: `LALT` when held, `(` when tapped. Add additional
-         // keycodes for each tapdance.
+  ALT_LP  // Our example key: `LALT` when held, `(` when tapped. Add additional
+          // keycodes for each tapdance.
 };
 
 enum custom_keycodes {
@@ -16,7 +25,7 @@ enum custom_keycodes {
   CIRC,
   GRV,
   TILD,
-  DELIM, // on the NUM word layer
+  DELIM,  // on the NUM word layer
 
   LPAREN,
   RPAREN,
@@ -31,7 +40,7 @@ enum custom_keycodes {
   KEBAB,
 
   // Layer management
-  CANCEL, // Cancel SYMWORD and NUMWORD
+  CANCEL,  // Cancel SYMWORD and NUMWORD
   CLEAR,  // Clear all WORD, one-shots and reset to BASE
   MG_THE,
   MG_ION,
@@ -43,11 +52,11 @@ enum custom_keycodes {
   M_SENTENCE,
 
   // N-Shot Mods
-  OS_LSFT, // OS Mods
-  OS_LCTL, // OS Mods
-  OS_LALT, // OS Mods
-  OS_LGUI, // OS Mods
-  TS_LCTL, // Two-shot ctrl
+  OS_LSFT,  // OS Mods
+  OS_LCTL,  // OS Mods
+  OS_LALT,  // OS Mods
+  OS_LGUI,  // OS Mods
+  TS_LCTL,  // Two-shot ctrl
 
   // used below in the thumb
   NEXTSEN,
@@ -64,7 +73,7 @@ enum custom_keycodes {
   KC_SCH,
 
   COPY_PASTE,
-  SP_MOD, // oneshot modifier and tap, nav layer on hold. See 'NAV_MOD'
+  SP_MOD,  // oneshot modifier and tap, nav layer on hold. See 'NAV_MOD'
   SP_SFT,
   CPYPASTE,
 
@@ -91,6 +100,7 @@ enum custom_keycodes {
   BI_PH,
 
 };
+
 
 #define META_DEAD LT(UTIL, KC_LGUI)
 
@@ -120,12 +130,11 @@ enum custom_keycodes {
 // special keys
 #define MAGIC QK_ALT_REPEAT_KEY
 #define REPEAT QK_REPEAT_KEY
-#define REP_SFT LSFT_T(QK_REPEAT_KEY)
+#define MAG_SFT LSFT_T(QK_ALT_REPEAT_KEY)
 #define ENT_CTL LCTL_T(KC_ENTER)
-#define MAG_ALT LALT_T(MAGIC)
 
-#define ESC_SYM LT(SYM, KC_ESC)
-#define COLON_SYM LT(SYM, KC_COLON)
+#define ESC_SYM LT(SYM,KC_ESC)
+#define COLON_SYM LT(SYM,KC_COLON)
 
 #define M_LT LT(NUM, KC_LT)
 #define M_GT LT(SYM, KC_GT)
@@ -137,28 +146,28 @@ enum custom_keycodes {
 #define OS_SYM OSL(SYM)
 #define OS_MEH OSM(MOD_MEH)
 #define UM_CTL LCTL_T(KC_U)
-#define BSPACE LT(NUM, KC_BSPC)
+#define BSPACE LT(NUM,KC_BSPC)
 
-#define ___A___ RSFT_T(KC_A)
+#define ___A___ RGUI_T(KC_A)
 #define ___B___ KC_B
-#define ___C___ LALT_T(KC_C)
-#define ___D___ MEH_T(KC_D)
-#define ___E___ RGUI_T(KC_E)
+#define ___C___ MEH_T(KC_C)
+#define ___D___ KC_D
+#define ___E___ LALT_T(KC_E)
 #define ___F___ KC_F
 #define ___G___ KC_G
-#define ___H___ RCTL_T(KC_H)
-#define ___I___ RALT_T(KC_I)
+#define ___H___ RSFT_T(KC_H)
+#define ___I___ RCTL_T(KC_I)
 #define ___J___ KC_J
 #define ___K___ KC_K
-#define ___L___ LALT_T(KC_L)
+#define ___L___ KC_L
 #define ___M___ KC_M
-#define ___N___ LGUI_T(KC_N)
-#define ___O___ MEH_T(KC_O)
-#define ___P___ KC_P
+#define ___N___ LCTL_T(KC_N)
+#define ___O___ KC_O
+#define ___P___ MEH_T(KC_P)
 #define ___Q___ KC_Q
-#define ___R___ KC_R
-#define ___S___ LCTL_T(KC_S)
-#define ___T___ LSFT_T(KC_T)
+#define ___R___ LALT_T(KC_R)
+#define ___S___ LSFT_T(KC_S)
+#define ___T___ LGUI_T(KC_T)
 #define ___U___ KC_U
 #define ___V___ KC_V
 #define ___W___ KC_W
@@ -175,50 +184,45 @@ enum custom_keycodes {
 #define _SEMIC_ KC_SCLN
 #define _QUEST_ KC_QUES
 
-#define ___0___ RGUI_T(KC_0)
-#define ___2___ RALT_T(KC_2)
-#define ___4___ RCTL_T(KC_4)
-#define ___6___ RSFT_T(KC_6)
-#define ___8___ MEH_T(KC_8)
+#define ___0___ KC_0
+#define ___2___ KC_2
+#define ___4___ KC_4
+#define ___6___ KC_6
+#define ___8___ KC_8
 
-#define ___1___ LGUI_T(KC_1)
-#define ___3___ LALT_T(KC_3)
-#define ___5___ LCTL_T(KC_5)
-#define ___7___ LSFT_T(KC_7)
-#define ___9___ MEH_T(KC_9)
+#define ___1___ KC_1
+#define ___3___ KC_3
+#define ___5___ KC_5
+#define ___7___ KC_7
+#define ___9___ KC_9
 
 #define _______ KC_TRNS
 #define _XXXXX_ KC_NO
-#define ___________________________________________                            \
+#define ___________________________________________ \
   _______, _______, _______, _______, _______
 
-// clang-format off
+
 // ----------------
 // layout wrappers inspired by https://github.com/pixelbreaker/qmk_userspace
 
-/*
-xz  wq m  g  j   #@ .: /* "! '?  
-s  c  n  t  k   ,; a  e  i  h  
-b  p  l  d  v   -+ u  o  y  f  
-r   ␣  
-*/
-#define _NEU_VB \
-  ___Z___, ___W___, ___M___, ___G___, ___J___,      KC_HASH, __DOT__, _SLASH_, _DQUOT_, _SQUOT_, \
-  ___S___, ___C___, ___N___, ___T___, ___K___,      _COMMA_, ___A___, ___E___, ___I___, ___H___, \
-  ___B___, ___P___, ___L___, ___D___, ___V___,      KC_MINS, ___U___, ___O___, ___Y___, ___F___, \
-           LT(UTIL,KC_Q), ___R___,  MAG_ALT,       ENT_CTL, NAV_SPC, LT(FUN,KC_X)
 
+
+#define _GRAPHITE \
+  ___B___, ___L___, ___D___, ___W___, ___Z___,      _SQUOT_, ___F___, ___O___, ___U___, ___J___, \
+  ___N___, ___R___, ___T___, ___S___, ___G___,      ___Y___, ___H___, ___A___, ___E___, ___I___, \
+  ___Q___, ___X___, ___M___, ___C___, ___V___,      ___K___, ___P___, _COMMA_, __DOT__, KC_SLSH, \
+             NAV_SPC, LT(SYM,KC_BSPC), LALT_T(KC_ENTER)  ,          LCTL_T(KC_ENTER),  NUMWORD, MAG_SFT
 
 #define _UTIL \
   SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO,               KC_NO, KC_BSPC, KC_UP,   KC_DEL,  KC_NO, \
   KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, OSM(MOD_MEH),        FWD,   KC_LEFT, KC_DOWN, KC_RGHT, BACK, \
   Z_UND,   Z_CUT,   Z_CPY,   Z_PST,   ALFRED,              KC_NO, KC_ESC,  KC_COLON,KC_NO,   KC_NO, \
-                    KC_SPC, KC_SPC,   KC_F19            , _______, _XXXXX_, _______
+                    _______, _______,   _______            , _______, _XXXXX_, _______
 
 #define _NUM \
-  KC_GRV  ,KC_EQL  ,KC_MINS, KC_UNDS ,KC_PAST      ,KC_BSLS, KC_HASH,  KC_AMPR, KC_PIPE, KC_TILD, \
-  ___7___ ,___5___ ,___3___ ,___1___ ,KC_PLUS      ,_SLASH_, ___0___,  ___2___, ___4___, ___6___ , \
-  KC_CIRC ,KC_COLON,KC_SCLN ,___9___ ,KC_LT        ,KC_GT, ___8___,  _COMMA_, __DOT__, __DOT__, \
+  KC_TILD ,KC_PLUS ,KC_PAST, KC_EXLM, _______      ,_______, KC_HASH,  KC_AT,   KC_CIRC, _COMMA_, \
+  ___7___ ,___5___ ,___3___ ,___1___, KC_BSLS      ,___0___, ___0___,  ___2___, ___4___, ___6___ , \
+  _______ ,KC_LT   ,KC_GT,   ___9___, _______      ,KC_SLSH, ___8___,  KC_LPRN, KC_RPRN, __DOT__, \
                     _______, _______, _______      ,_______, _______, _______
 
 #define _NUM2 \
@@ -262,10 +266,10 @@ r   ␣
             k59, k60, k61,        k64, k65, k66 \
 ) \
      QK_BOOT   ,KC_7    ,KC_5    ,KC_3    ,KC_1    ,KC_9    ,                                            KC_8    ,KC_0    ,KC_2    ,KC_4    ,KC_6  ,KC_NO   , \
-     KC_GRV  ,k15     ,k16     ,k17     ,k18     ,k19     ,KC_F11   ,                         KC_F12  ,k22     ,k23     ,k24     ,k25     ,k26     ,KC_Q , \
-     KC_EQL  ,k29     ,k30     ,k31     ,k32     ,k33     ,KC_DLR  ,                         KC_DLR   ,k36     ,k37     ,k38     ,k39     ,k40 ,    KC_Z , \
-     KC_LSFT ,k43     ,k44     ,k45     ,k46     ,k47     ,KC_NO   ,QK_BOOT ,        QK_BOOT ,KC_NO   ,k50     ,k51     ,k52     ,k53     ,k54     ,KC_RSFT , \
-     KC_LCTL ,KC_LALT ,KC_LEFT ,KC_RIGHT   ,     k59     ,    k60     ,k61     ,        k64      ,k65     ,k66     ,KC_LBRC ,KC_RBRC ,KC_NO   ,KC_NO
+     KC_GRV  ,k15     ,k16     ,k17     ,k18     ,k19     ,KC_F11   ,                         KC_F12  ,k22     ,k23     ,k24     ,k25     ,k26     ,KC_BSLS , \
+     KC_MINS ,k29     ,k30     ,k31     ,k32     ,k33     ,KC_DLR  ,                         KC_DLR   ,k36     ,k37     ,k38     ,k39     ,k40 ,    KC_EQL , \
+     OS_LSFT ,k43     ,k44     ,k45     ,k46     ,k47     ,KC_NO   ,QK_BOOT ,        QK_BOOT ,KC_NO   ,k50     ,k51     ,k52     ,k53     ,k54     ,KC_RSFT , \
+     KC_LCTL ,KC_LALT ,KC_DOWN ,KC_UP   ,     k59     ,    k60     ,k61     ,        k64      ,k65     ,k66     ,KC_LEFT ,KC_RIGHT ,KC_NO   ,KC_NO 
 
 #define REDOX(k) CONV_REDOX(k)
 

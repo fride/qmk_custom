@@ -9,21 +9,21 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       case ___B___:
         return KC_N;  // TODO BEFORE
       case ___C___: // C
-        return KC_Y;
+        return KC_S;
       case ___D___:
         return KC_Y;
       case ___E___:
         return KC_U;
       case ___F___:
         return KC_Y;
-      case ___N___:
-        return KC_F;  // Fuenf!
       case ___G___:
-        return KC_Y;
+        return KC_S;        
       case ___H___:
-        return KC_Y;
+        return KC_Y;  
       case ___I___:
-        return MG_ION;
+        return MG_ION;        
+      case ___N___:
+        return KC_F;  // Fuenf!            
       case ___J___:
         return MG_UST;
       case ___K___:
@@ -39,7 +39,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       case ___R___:
         return KC_L;
       case ___S___:
-        return KC_K;
+        return KC_C;
       case ___T___:
         return KC_M; //ment does not work that well with german
       case ___U___:
@@ -49,7 +49,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       case ___W___:
         return KC_Y;
       case ___Y___:
-        return KC_P;
+        return KC_QUOT;
       case KC_EQL:
         return KC_GT;
       case KC_LPRN:
@@ -65,9 +65,8 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         return M_SENTENCE; // ODO does not work!
       case KC_1 ... KC_0:
         return KC_DOT;      
+  
       case KC_GT:
-        return KC_MINS;
-      case KC_LT:
         return KC_MINS;
       case KC_PIPE:
         return KC_GT;
@@ -76,15 +75,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       default:
         return KC_N;
     }
-  } if (mods & ~MOD_MASK_SHIFT) {
-    switch (keycode) {
-      case KC_LT:
-        return KC_MINS;
-      default:
-        return KC_N;
-    }
-  }
-  else if ((mods & MOD_MASK_CTRL)) {
+  } else if ((mods & MOD_MASK_CTRL)) {
     switch (keycode) {
       case KC_A:  // Ctrl+A -> Ctrl+K
         return C(KC_K);
@@ -99,8 +90,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
 // reeat
 bool remember_last_key_user(uint16_t keycode, keyrecord_t* record, uint8_t* remembered_mods) {
     switch (keycode) {
-        case MAG_ALT:
-        case OS_LSFT:
+        case MAG_SFT:
             return false;
         case KC_A ... KC_Y:
               if ((*remembered_mods & ~(MOD_MASK_SHIFT | MOD_BIT(KC_RALT))) == 0) {
@@ -115,7 +105,7 @@ bool remember_last_key_user(uint16_t keycode, keyrecord_t* record, uint8_t* reme
 bool get_repeat_key_eligible_user(uint16_t keycode, keyrecord_t *record,
                                   uint8_t *remembered_mods) {
   switch (keycode) {
-    case MAG_ALT:
+    case MAG_SFT:
       return false;
     // Forget Shift on letter keys A-Y when Shift or AltGr are the only mods.
     // Exceptionally, I want to remember Shift on Z for "ZZ" in Vim.
