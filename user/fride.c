@@ -444,6 +444,8 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
     case ENT_CTL:
     case COLON_SYM:
     case ESC_SYM:
+    case DEL_NUM:
+    case BSPC_UTIL:
       return true;    
     default:
       break;
@@ -466,6 +468,8 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
     case COLON_SYM:
     case ESC_SYM:
     case ENT_CTL:
+    case DEL_NUM:
+    case BSPC_UTIL:
       return 0;  // Bypass Achordion for these keys.
   }
 

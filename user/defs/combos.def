@@ -1,19 +1,71 @@
-
+/*
+Hands down - again ;)
+xz  wq m  g  j   #@ .: / * "! '?  
+s  c  n  t  k   ,; a  e  i  h  
+b  p  l  d  v   -+ u  o  y  f  
+r   ␣  
+*/
 
  
-COMB(BOOT,            QK_BOOT,          KC_B, KC_V)
-COMB(CMB_NUM,         NUMWORD,          NAV_SPC, MAG_SFT)
-COMB(CMB_CANCEL,	    CANCEL,		        ___N___, ___I___)
+COMB(BOOT,            QK_BOOT,            KC_V,   KC_QUOT)
+COMB(CMB_NUM,         NUMWORD,            KC_R,   NAV_SPC)
+COMB(CMB_CANCEL,	    CANCEL,		      LCTL_T(KC_S), RCTL_T(KC_I))
 COMB(CMB_ENTER,	      KC_ENTER,		      ___H___, ___A___, ___E___)
 
 
-COMB(CMB_ESC,         ESC_SYM,          KC_A, KC_E)
-// for the totem!?
-COMB(CMB_Q,           KC_Q,             KC_B, KC_Y)
-COMB(CMB_Z,           KC_Z,             KC_Y, KC_O)
+COMB(CMB_ESC,         ESC_SYM,         LGUI_T(KC_R), LSFT_T(KC_D))
+COMB(CMB_Q,           KC_Q,            KC_Z,         RALT_T(KC_W))
+COMB(CMB_X,           KC_X,            RALT_T(KC_W), KC_M)
 
-COMB(CMB_KA,          KA,               MEH_T(KC_K), KC_J)
-COMB(CMB_KU,          KU,               MEH_T(KC_K), KC_X)
-COMB(CMB_KAU,         KAU,              MEH_T(KC_K), KC_J,KC_X)
+COMB(CMB_AT,           KC_AT,          RALT_T(KC_W), LALT_T(KC_C))
+COMB(CMB_HASH,         KC_HASH,        KC_M,         LGUI_T(KC_N))
+COMB(CMB_DLR,          KC_DLR,         KC_G,         LSFT_T(KC_T))
+COMB(CMB_PERC,         KC_PERC,        KC_J,         KC_K)
 
+COMB(CMB_CIRC,         KC_CIRC,        KC_HASH,         KC_COMM)
+COMB(CMB_PLUS,         KC_PLUS,        KC_DOT,          RSFT_T(KC_A))
+COMB(CMB_PAST,         KC_PAST,        KC_SLSH,         RGUI_T(KC_E))
+COMB(CMB_AMPR,         KC_AMPR,        RALT_T(KC_DQUO), LALT_T(KC_I))
+
+COMB(CMB_GRV,          KC_GRV,         LALT_T(KC_C),  KC_P)
+COMB(CMB_BSLS,         KC_BSLS,        LGUI_T(KC_N),  KC_L)
+COMB(CMB_EQL,          KC_EQL,         LSFT_T(KC_T),  MEH_T(KC_D))
+COMB(CMB_TILD,         KC_TILD,        KC_K,          KC_V)
+
+COMB(CMB_UNDS,         KC_UNDS,        KC_COMM,       KC_MINS)
+COMB(CMB_MINS,         KC_MINS,        RSFT_T(KC_A),  MEH_T(KC_U))
+COMB(CMB_SLSH,         KC_SLSH,        RGUI_T(KC_E),  KC_O)
+COMB(CMB_PIPE,         KC_PIPE,        LALT_T(KC_I),  KC_Y)
+
+
+// Horizontal
+// COMB(CMB_ESC,         KC_ESC,        ___M___,   ___L___)
+// COMB(CMB_TAB,         KC_TAB,        ___N___,   ___T___, ___C___)
+// COMB(CMB_ENTER,       KC_ENTER,      ___H___,   ___E___, ___A___)
+// COMB(CMB_ESC_SYM,      ESC_SYM,        ___N___, ___T___)
+// COMB(CMB_CLN_SYM,      COLON_SYM,      ___H___, ___E___)
+
+// COMB(CMB_LT,           KC_LT,          ___X___, ___H___)
+// COMB(CMB_GT,           KC_GT,          ___H___, ___G___)
+// COMB(CMB_LBRC,         KC_LBRC,        __DOT__, _SLASH_)
+// COMB(CMB_RBRC,         KC_RBRC,        _SLASH_, _SQUOT_)
+// COMB(CMB_LPRN,         KC_LPRN,        ___A___, ___E___)
+// COMB(CMB_RPRN,         KC_RPRN,        ___E___, ___I___)
+// COMB(CMB_LCBR,         KC_LCBR,        ___U___, ___O___)
+// COMB(CMB_RCBR,         KC_RCBR,        ___O___, ___Y___)
+
+
+
+// thumbs numbers 
+COMB(CMB_1,         KC_1,          KC_R, LSFT_T(KC_T))
+COMB(CMB_3,         KC_3,          KC_R, LGUI_T(KC_N))
+COMB(CMB_5,         KC_5,          KC_R, LALT_T(KC_C))
+COMB(CMB_7,         KC_7,          KC_R, LCTL_T(KC_S))
+COMB(CMB_9,         KC_9,          KC_R, MEH_T(KC_D))
+
+COMB(CMB_0,         KC_0,          NAV_SPC, RSFT_T(KC_A))
+COMB(CMB_2,         KC_2,          NAV_SPC, RGUI_T(KC_E))
+COMB(CMB_4,         KC_4,          NAV_SPC, LALT_T(KC_I))
+COMB(CMB_6,         KC_6,          NAV_SPC, RCTL_T(KC_H))
+COMB(CMB_8,         KC_8,          NAV_SPC, MEH_T(KC_U))
 

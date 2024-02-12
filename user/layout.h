@@ -142,6 +142,10 @@ enum custom_keycodes {
 #define M_LT LT(NUM, KC_LT)
 #define M_GT LT(SYM, KC_GT)
 
+
+#define BSPC_UTIL LT(UTIL,KC_BSPC)
+#define DEL_NUM LT(NUM,KC_DEL)
+
 // thumb keys!
 #define NAV_SPC LT(UTIL, KC_SPC)
 #define MEH_SPC MEH_T(KC_SPC)
@@ -223,26 +227,26 @@ r   ␣
 #define ______________HANDS_DOWN_R2________________ KC_COMM, RSFT_T(KC_A), RGUI_T(KC_E), LALT_T(KC_I),    RCTL_T(KC_H)
 #define ______________HANDS_DOWN_R3________________ KC_MINS, MEH_T(KC_U),  KC_O,         KC_Y,            KC_F
 
+#define _________________UTILS_L1__________________ SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO
+#define _________________UTILS_L2__________________ KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, OSM(MOD_MEH)
+#define _________________UTILS_L3__________________ Z_UND,   Z_CUT,   Z_CPY,   Z_PST,   ALFRED
 
-#define ________________ENGRAMM_L1_________________ KC_V,         RALT_T(KC_W), KC_D,         KC_L,         KC_SCLN
-#define ________________ENGRAMM_L2_________________ LCTL_T(KC_N), LALT_T(KC_S), LGUI_T(KC_T), LSFT_T(KC_H), KC_COMM
-#define ________________ENGRAMM_L3_________________ KC_P,         KC_F,         KC_M,         MEH_T(KC_R),   KC_MINS
+#define _________________UTILS_R1__________________ KC_NO, KC_BSPC, KC_UP,   KC_DEL,  KC_NO
+#define _________________UTILS_R2__________________ FWD,   KC_LEFT, KC_DOWN, KC_RGHT, BACK
+#define _________________UTILS_R3__________________ KC_NO, KC_ESC,  KC_COLON,KC_NO,   KC_NO
 
-#define ________________ENGRAMM_R1_________________ KC_QUOT, KC_U,         KC_O,         RALT_T(KC_Y), KC_B
-#define ________________ENGRAMM_R2_________________ KC_DOT,  RSFT_T(KC_A), RGUI_T(KC_E), LALT_T(KC_I), RCTL_T(KC_C)
-#define ________________ENGRAMM_R3_________________ KC_SLSH, MEH_T(KC_K),  KC_J,         KC_X,         KC_G
-
-#define _ENGRAM \
-  ________________ENGRAMM_L1_________________, ________________ENGRAMM_R1_________________, \
-  ________________ENGRAMM_L2_________________, ________________ENGRAMM_R2_________________, \
-  ________________ENGRAMM_L3_________________, ________________ENGRAMM_R3_________________, \
-             NUMWORD, LT(SYM,KC_BSPC), KC_ENTER,          LCTL_T(KC_ENTER),  NAV_SPC, LT(SYM,KC_TAB)
+#define _BASE \
+  ______________HANDS_DOWN_L1________________, ______________HANDS_DOWN_R1________________, \
+  ______________HANDS_DOWN_L2________________, ______________HANDS_DOWN_R2________________, \
+  ______________HANDS_DOWN_L3________________, ______________HANDS_DOWN_R3________________, \
+                      KC_BSPC,KC_R,OSL(SYM),     LT(SYM,KC_ENTER), NAV_SPC, OSL(FUN)
 
 #define _UTIL \
-  SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO,               KC_NO, KC_BSPC, KC_UP,   KC_DEL,  KC_NO, \
-  KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, OSM(MOD_MEH),        FWD,   KC_LEFT, KC_DOWN, KC_RGHT, BACK, \
-  Z_UND,   Z_CUT,   Z_CPY,   Z_PST,   ALFRED,              KC_NO, KC_ESC,  KC_COLON,KC_NO,   KC_NO, \
+  _________________UTILS_L1__________________, _________________UTILS_R1__________________, \
+  _________________UTILS_L2__________________, _________________UTILS_R2__________________, \
+  _________________UTILS_L3__________________, _________________UTILS_R3__________________, \
                     _______, _______,   _______            , _______, _XXXXX_, _______
+
 
 #define _NUM \
   KC_TILD ,KC_PLUS ,KC_PAST, KC_EXLM, _______      ,_______, KC_HASH,  KC_AT,   KC_CIRC, _COMMA_, \
@@ -340,3 +344,12 @@ r   ␣
                     _______, _______, _______      ,_______, _______, _______
 
 */
+
+
+#define ______________MAGICSTURDY_L1_______________ KC_V,         RALT_T(KC_M), KC_L,         KC_C,         KC_P
+#define ______________MAGICSTURDY_L2_______________ LCTL_T(KC_S), LALT_T(KC_T), LGUI_T(KC_R), LSFT_T(KC_D), KC_Y
+#define ______________MAGICSTURDY_L3_______________ KC_X,         KC_K,         KC_J,         MEH_T(KC_G),  KC_W
+
+#define ______________MAGICSTURDY_R1_______________ KC_B,    MAGIC,        KC_U,         RALT_T(KC_O),    KC_QUOT
+#define ______________MAGICSTURDY_R2_______________ KC_F,    RSFT_T(KC_N), RGUI_T(KC_E), LALT_T(KC_A),    RCTL_T(KC_I)
+#define ______________MAGICSTURDY_R3_______________ KC_Z,    MEH_T(KC_H),  KC_COMM,      KC_DOT,          KC_SCLN
