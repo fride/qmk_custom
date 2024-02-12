@@ -7,7 +7,7 @@ r   ␣
 */
 
  
-COMB(BOOT,            QK_BOOT,            KC_V,   KC_QUOT)
+COMB(BOOT,            QK_BOOT,            KC_Z,   KC_QUOT)
 COMB(CMB_NUM,         NUMWORD,            KC_R,   NAV_SPC)
 COMB(CMB_CANCEL,	    CANCEL,		      LCTL_T(KC_S), RCTL_T(KC_I))
 COMB(CMB_ENTER,	      KC_ENTER,		      ___H___, ___A___, ___E___)

@@ -185,7 +185,7 @@ enum custom_keycodes {
 #define __DOT__ KC_DOT
 #define _SLASH_ KC_SLSH
 #define _SQUOT_ KC_QUOT
-#define _DQUOT_ KC_DQUO
+#define _DQUOT_ RALT_T(KC_DQUO)
 #define _MINUS_ KC_MINS
 #define __HASH_ KC_HASH
 #define _SEMIC_ KC_SCLN
@@ -223,7 +223,7 @@ r   ␣
 #define ______________HANDS_DOWN_L2________________ LCTL_T(KC_S), LALT_T(KC_C), LGUI_T(KC_N), LSFT_T(KC_T), KC_K
 #define ______________HANDS_DOWN_L3________________ KC_B,         KC_P,         KC_L,         MEH_T(KC_D),  KC_V
 
-#define ______________HANDS_DOWN_R1________________ KC_HASH, KC_DOT,       KC_SLSH,      RALT_T(KC_DQUO), KC_QUOT
+#define ______________HANDS_DOWN_R1________________ KC_BSLS, KC_DOT,       KC_SLSH,      KC_EQL,          KC_QUOT
 #define ______________HANDS_DOWN_R2________________ KC_COMM, RSFT_T(KC_A), RGUI_T(KC_E), LALT_T(KC_I),    RCTL_T(KC_H)
 #define ______________HANDS_DOWN_R3________________ KC_MINS, MEH_T(KC_U),  KC_O,         KC_Y,            KC_F
 
