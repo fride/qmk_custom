@@ -135,13 +135,14 @@ enum custom_keycodes {
 #define REPEAT QK_REPEAT_KEY
 #define MAG_SFT LSFT_T(QK_ALT_REPEAT_KEY)
 #define ENT_CTL LCTL_T(KC_ENTER)
+#define REP_SFT LSFT_T(QK_REPEAT_KEY)
+#define ENT_CTL LCTL_T(KC_ENTER)
 
 #define ESC_SYM LT(SYM,KC_ESC)
 #define COLON_SYM LT(SYM,KC_COLON)
 
 #define M_LT LT(NUM, KC_LT)
 #define M_GT LT(SYM, KC_GT)
-
 
 #define BSPC_UTIL LT(UTIL,KC_BSPC)
 #define DEL_NUM LT(NUM,KC_DEL)
@@ -157,25 +158,25 @@ enum custom_keycodes {
 
 #define ___A___ RGUI_T(KC_A)
 #define ___B___ KC_B
-#define ___C___ MEH_T(KC_C)
-#define ___D___ KC_D
+#define ___C___ RSFT_T(KC_C)
+#define ___D___ MEH_T(KC_D)
 #define ___E___ LALT_T(KC_E)
 #define ___F___ KC_F
-#define ___G___ KC_G
-#define ___H___ RSFT_T(KC_H)
+#define ___G___ MEH_T(KC_G)
+#define ___H___ KC_H
 #define ___I___ RCTL_T(KC_I)
 #define ___J___ KC_J
 #define ___K___ KC_K
-#define ___L___ KC_L
+#define ___L___ RALT_T(KC_L)
 #define ___M___ KC_M
-#define ___N___ LCTL_T(KC_N)
+#define ___N___ LGUI_T(KC_N)
 #define ___O___ KC_O
-#define ___P___ MEH_T(KC_P)
+#define ___P___ KC_P
 #define ___Q___ KC_Q
 #define ___R___ LALT_T(KC_R)
-#define ___S___ LSFT_T(KC_S)
-#define ___T___ LGUI_T(KC_T)
-#define ___U___ KC_U
+#define ___S___ LCTL_T(KC_S)
+#define ___T___ LSFT_T(KC_T)
+#define ___U___ RALT_T(KC_U)
 #define ___V___ KC_V
 #define ___W___ KC_W
 #define ___X___ KC_X
@@ -185,23 +186,23 @@ enum custom_keycodes {
 #define __DOT__ KC_DOT
 #define _SLASH_ KC_SLSH
 #define _SQUOT_ KC_QUOT
-#define _DQUOT_ RALT_T(KC_DQUO)
+#define _DQUOT_ KC_DQUO
 #define _MINUS_ KC_MINS
 #define __HASH_ KC_HASH
 #define _SEMIC_ KC_SCLN
 #define _QUEST_ KC_QUES
 
-#define ___0___ KC_0
-#define ___2___ KC_2
-#define ___4___ KC_4
-#define ___6___ KC_6
-#define ___8___ KC_8
+#define ___0___ RSFT_T(KC_0)
+#define ___2___ RGUI_T(KC_2)
+#define ___4___ RALT_T(KC_4)
+#define ___6___ RCTL_T(KC_6)
+#define ___8___ MEH_T(KC_8)
 
-#define ___1___ KC_1
-#define ___3___ KC_3
-#define ___5___ KC_5
-#define ___7___ KC_7
-#define ___9___ KC_9
+#define ___1___ LSFT_T(KC_1)
+#define ___3___ LGUI_T(KC_3)
+#define ___5___ LALT_T(KC_5)
+#define ___7___ LCTL_T(KC_7)
+#define ___9___ MEH_T(KC_9)
 
 #define _______ KC_TRNS
 #define _XXXXX_ KC_NO
@@ -235,25 +236,6 @@ r   ␣
 #define _________________UTILS_R2__________________ FWD,   KC_LEFT, KC_DOWN, KC_RGHT, BACK
 #define _________________UTILS_R3__________________ KC_NO, KC_ESC,  KC_COLON,KC_NO,   KC_NO
 
-#define _BASE \
-  ______________HANDS_DOWN_L1________________, ______________HANDS_DOWN_R1________________, \
-  ______________HANDS_DOWN_L2________________, ______________HANDS_DOWN_R2________________, \
-  ______________HANDS_DOWN_L3________________, ______________HANDS_DOWN_R3________________, \
-                      KC_BSPC,KC_R,OSL(SYM),     LT(SYM,KC_ENTER), NAV_SPC, OSL(FUN)
-
-#define _UTIL \
-  _________________UTILS_L1__________________, _________________UTILS_R1__________________, \
-  _________________UTILS_L2__________________, _________________UTILS_R2__________________, \
-  _________________UTILS_L3__________________, _________________UTILS_R3__________________, \
-                    _______, _______,   _______            , _______, _XXXXX_, _______
-
-
-#define _NUM \
-  KC_TILD ,KC_PLUS ,KC_PAST, KC_EXLM, _______      ,_______, KC_HASH,  KC_AT,   KC_CIRC, _COMMA_, \
-  ___7___ ,___5___ ,___3___ ,___1___, KC_BSLS      ,___0___, ___0___,  ___2___, ___4___, ___6___ , \
-  _______ ,KC_LT   ,KC_GT,   ___9___, _______      ,KC_SLSH, ___8___,  KC_LPRN, KC_RPRN, __DOT__, \
-                    _______, _______, _______      ,_______, _______, _______
-
 
 #define _________________NUMBER_L1_________________ _______, KC_D,    KC_E,    KC_F,    KC_UNDS
 #define _________________NUMBER_L2_________________ KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_MEH
@@ -265,10 +247,10 @@ r   ␣
         
 
 #define _NUM2 \
-  KC_PLUS ,___7___, ___8___, ___9___, KC_PAST      ,_______, _______, _______, _______, _COMMA_, \
-  ___0___, ___4___, ___5___, ___6___, KC_EQL       ,_______, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL , \
-  KC_MINS ,___1___, ___2___, ___3___, KC_SLSH       ,_______, _______, _______, _______, __DOT__, \
-                    _______, _______, _______      ,_______, _______, _______
+  KC_BSLS ,KC_7, KC_8, KC_9, KC_SLSH      ,KC_MINS, KC_LT, KC_GT, KC_EQL, _COMMA_, \
+  KC_COLN, KC_4, KC_5, KC_6, KC_HASH      ,TG(NUM), KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL , \
+  KC_AT   ,KC_1, KC_2 ,KC_3, KC_GRV       ,_______, _______, _______, _______, __DOT__, \
+              KC_MINS, KC_0, KC_BSLS      ,_______, _XXXXX_, _______
 
 #define _ALWAYS_ACC \
   _______ ,KC_ESC, KC_COLON, _______, _______      ,_______, _______,  _______, _______, _______, \
@@ -293,9 +275,6 @@ r   ␣
   OS_LALT,      OS_LCTL,      OS_LGUI,      OS_LSFT,      OSM(MOD_MEH),      KC_NO,   KC_F4,        KC_F5,           KC_F6,      KC_F11, \
   KC_NO,        KC_NO,        WN_SOUTH,     KC_NO,        KC_NO,             KC_NO,   KC_F1,        KC_F2,           KC_F3,      KC_F12, \
                                 _______, _______, _______      ,_______, _______, _______
-
-
-
 
 
 // -------------------------------------------------------------------------------------------------------- //
@@ -346,10 +325,38 @@ r   ␣
 */
 
 
-#define ______________MAGICSTURDY_L1_______________ KC_V,         RALT_T(KC_M), KC_L,         KC_C,         KC_P
+#define ______________MAGICSTURDY_L1_______________ KC_V,         ___M___,      KC_L,         KC_C,         KC_P
 #define ______________MAGICSTURDY_L2_______________ LCTL_T(KC_S), LALT_T(KC_T), LGUI_T(KC_R), LSFT_T(KC_D), KC_Y
-#define ______________MAGICSTURDY_L3_______________ KC_X,         KC_K,         KC_J,         MEH_T(KC_G),  KC_W
+#define ______________MAGICSTURDY_L3_______________ KC_X,         KC_K,         KC_J,         ___G___,      KC_W
 
-#define ______________MAGICSTURDY_R1_______________ KC_B,    MAGIC,        KC_U,         RALT_T(KC_O),    KC_QUOT
+#define ______________MAGICSTURDY_R1_______________ KC_B,    MAGIC,        KC_U,         ___O___,         KC_QUOT
 #define ______________MAGICSTURDY_R2_______________ KC_F,    RSFT_T(KC_N), RGUI_T(KC_E), LALT_T(KC_A),    RCTL_T(KC_I)
-#define ______________MAGICSTURDY_R3_______________ KC_Z,    MEH_T(KC_H),  KC_COMM,      KC_DOT,          KC_SCLN
+#define ______________MAGICSTURDY_R3_______________ KC_Z,    ___H___,      KC_COMM,      KC_DOT,          KC_SCLN
+
+#define _________________DHORF_L1__________________ ___V___, ___L___, ___H___, ___K___, ___Q___
+#define _________________DHORF_L2__________________ ___S___, ___R___, ___N___, ___T___, ___W___
+#define _________________DHORF_L3__________________ ___Z___, ___X___, ___M___, ___D___, ___B___
+
+#define _________________DHORF_R1__________________ KC_J,    ___F___, ___O___, ___U___, KC_COMM
+#define _________________DHORF_R2__________________ KC_Y,    ___C___, ___A___, ___E___, ___I___
+#define _________________DHORF_R3__________________ KC_P,    ___G___, KC_QUOT, KC_SCLN, KC_DOT
+
+
+#define _BASE \
+  _________________DHORF_L1__________________, _________________DHORF_R1__________________, \
+  _________________DHORF_L2__________________, _________________DHORF_R2__________________, \
+  _________________DHORF_L3__________________, _________________DHORF_R3__________________, \
+           KC_BSPC,NAV_SPC,LT(KC_SLSH,SYM),     LT(SYM,KC_ENTER), LT(NUM,KC_BSPC), OSL(FUN)
+
+#define _UTIL \
+  _________________UTILS_L1__________________, _________________UTILS_R1__________________, \
+  _________________UTILS_L2__________________, _________________UTILS_R2__________________, \
+  _________________UTILS_L3__________________, _________________UTILS_R3__________________, \
+                    _______, _______,   _______            , _______, _XXXXX_, _______
+
+
+#define _NUM \
+  KC_GRV  ,KC_EQL , KC_MINS, KC_UNDS, KC_PAST      ,KC_BSLS, KC_HASH,  KC_AMPR, KC_PIPE, _COMMA_, \
+  ___7___ ,___5___ ,___3___ ,___1___, KC_PLUS      ,KC_TILD, ___0___,  ___2___, ___4___, ___6___ , \
+  KC_TILD ,KC_COLON,KC_SCLN, ___9___, KC_AT        ,KC_SLSH, ___8___,  KC_CIRC, KC_DLR,  __DOT__, \
+                    KC_LT, _______, KC_GT      ,_______, _XXXXX_, _______
