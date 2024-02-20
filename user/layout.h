@@ -228,6 +228,7 @@ r   ␣
 #define ______________HANDS_DOWN_R2________________ KC_COMM, RSFT_T(KC_A), RGUI_T(KC_E), LALT_T(KC_I),    RCTL_T(KC_H)
 #define ______________HANDS_DOWN_R3________________ KC_MINS, MEH_T(KC_U),  KC_O,         KC_Y,            KC_F
 
+
 #define _________________UTILS_L1__________________ SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO
 #define _________________UTILS_L2__________________ KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, OSM(MOD_MEH)
 #define _________________UTILS_L3__________________ Z_UND,   Z_CUT,   Z_CPY,   Z_PST,   ALFRED
