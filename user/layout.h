@@ -156,27 +156,27 @@ enum custom_keycodes {
 #define UM_CTL LCTL_T(KC_U)
 #define BSPACE LT(NUM,KC_BSPC)
 
-#define ___A___ RGUI_T(KC_A)
+#define ___A___ LSFT_T(KC_A)
 #define ___B___ KC_B
-#define ___C___ RSFT_T(KC_C)
-#define ___D___ MEH_T(KC_D)
-#define ___E___ LALT_T(KC_E)
+#define ___C___ LCTL_T(KC_C)
+#define ___D___ RALT_T(KC_D)
+#define ___E___ KC_E
 #define ___F___ KC_F
-#define ___G___ MEH_T(KC_G)
-#define ___H___ KC_H
-#define ___I___ RCTL_T(KC_I)
+#define ___G___ KC_G
+#define ___H___ RSFT_T(KC_H)
+#define ___I___ LALT_T(KC_I)
 #define ___J___ KC_J
-#define ___K___ KC_K
-#define ___L___ RALT_T(KC_L)
+#define ___K___ MEH_T(KC_K)
+#define ___L___ KC_L
 #define ___M___ KC_M
-#define ___N___ LGUI_T(KC_N)
-#define ___O___ KC_O
+#define ___N___ RCTL_T(KC_N)
+#define ___O___ RALT_T(KC_O)
 #define ___P___ KC_P
 #define ___Q___ KC_Q
-#define ___R___ LALT_T(KC_R)
-#define ___S___ LCTL_T(KC_S)
+#define ___R___ MEH_T(KC_R)
+#define ___S___ LALT_T(KC_S)
 #define ___T___ LSFT_T(KC_T)
-#define ___U___ RALT_T(KC_U)
+#define ___U___ KC_U
 #define ___V___ KC_V
 #define ___W___ KC_W
 #define ___X___ KC_X
@@ -213,21 +213,13 @@ enum custom_keycodes {
 // ----------------
 // layout wrappers inspired by https://github.com/pixelbreaker/qmk_userspace
 
-/*
-Hands down - again ;)
-xz  wq m  g  j   #@ .: / * "! '?  
-s  c  n  t  k   ,; a  e  i  h  
-b  p  l  d  v   -+ u  o  y  f  
-r   ␣  
-*/
-#define ______________HANDS_DOWN_L1________________ KC_Z,         RALT_T(KC_W), KC_M,         KC_G,         KC_J
-#define ______________HANDS_DOWN_L2________________ LCTL_T(KC_S), LALT_T(KC_C), LGUI_T(KC_N), LSFT_T(KC_T), KC_K
-#define ______________HANDS_DOWN_L3________________ KC_B,         KC_P,         KC_L,         MEH_T(KC_D),  KC_V
-
-#define ______________HANDS_DOWN_R1________________ KC_BSLS, KC_DOT,       KC_SLSH,      KC_EQL,          KC_QUOT
-#define ______________HANDS_DOWN_R2________________ KC_COMM, RSFT_T(KC_A), RGUI_T(KC_E), LALT_T(KC_I),    RCTL_T(KC_H)
-#define ______________HANDS_DOWN_R3________________ KC_MINS, MEH_T(KC_U),  KC_O,         KC_Y,            KC_F
-
+// https://sunaku.github.io/engrammer-keyboard-layout.html
+#define ______________ENGRAMMM_2__L1_______________ ___B___, ___Y___,       ___O___,      ___U___,          _SQUOT_
+#define ______________ENGRAMMM_2__L2_______________ ___C___, ___I___,       ___E___,      ___A___,          _COMMA_
+#define ______________ENGRAMMM_2__L3_______________ ___G___, ___X___,       ___J___,      ___K___,          _MINUS_
+#define ______________ENGRAMMM_2__R1_______________ _SEMIC_, ___L___,       ___D___,      ___W___,          ___V___
+#define ______________ENGRAMMM_2__R2_______________ __DOT__, ___H___,       ___T___,      ___S___,          ___N___
+#define ______________ENGRAMMM_2__R3_______________ _SLASH_, ___R___,       ___M___,      ___F___,          ___P___
 
 #define _________________UTILS_L1__________________ SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO
 #define _________________UTILS_L2__________________ KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, OSM(MOD_MEH)
@@ -238,14 +230,15 @@ r   ␣
 #define _________________UTILS_R3__________________ KC_NO, KC_ESC,  KC_COLON,KC_NO,   KC_NO
 
 
-#define _________________NUMBER_L1_________________ _______, KC_D,    KC_E,    KC_F,    KC_UNDS
-#define _________________NUMBER_L2_________________ KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_MEH
-#define _________________NUMBER_L3_________________ OS_LSFT, G(KC_Z), _______, KC_SPC,  KC_TAB
-
-#define _________________NUMBER_R1_________________ KC_PERC, KC_7, KC_8, KC_9, KC_COLN
-#define _________________NUMBER_R2_________________ KC_PLUS, KC_4, KC_5, KC_6, KC_MINS
-#define _________________NUMBER_R3_________________ KC_PAST, KC_1, KC_2, KC_3, KC_SLSH
+#define _________________NUMBER_L1_________________ KC_GRV  ,KC_EQL , KC_MINS, KC_UNDS, _SQUOT_      
+#define _________________NUMBER_L2_________________ ___7___ ,___5___ ,___3___ ,___1___, _COMMA_
+#define _________________NUMBER_L3_________________ KC_TILD ,KC_COLON,KC_SCLN, ___9___, _MINUS_
+                    
+#define _________________NUMBER_R1_________________ _SEMIC_, KC_HASH,  KC_AMPR, KC_PIPE, KC_TILD
+#define _________________NUMBER_R2_________________ __DOT__, ___0___,  ___2___, ___4___, ___6___ 
+#define _________________NUMBER_R3_________________ _SLASH_, ___8___,  KC_CIRC, KC_DLR,  KC_BSLH
         
+  
 
 #define _NUM2 \
   KC_BSLS ,KC_7, KC_8, KC_9, KC_SLSH      ,KC_MINS, KC_LT, KC_GT, KC_EQL, _COMMA_, \
@@ -326,27 +319,10 @@ r   ␣
 */
 
 
-#define ______________MAGICSTURDY_L1_______________ KC_V,         ___M___,      KC_L,         KC_C,         KC_P
-#define ______________MAGICSTURDY_L2_______________ LCTL_T(KC_S), LALT_T(KC_T), LGUI_T(KC_R), LSFT_T(KC_D), KC_Y
-#define ______________MAGICSTURDY_L3_______________ KC_X,         KC_K,         KC_J,         ___G___,      KC_W
-
-#define ______________MAGICSTURDY_R1_______________ KC_B,    MAGIC,        KC_U,         ___O___,         KC_QUOT
-#define ______________MAGICSTURDY_R2_______________ KC_F,    RSFT_T(KC_N), RGUI_T(KC_E), LALT_T(KC_A),    RCTL_T(KC_I)
-#define ______________MAGICSTURDY_R3_______________ KC_Z,    ___H___,      KC_COMM,      KC_DOT,          KC_SCLN
-
-#define _________________DHORF_L1__________________ ___V___, ___L___, ___H___, ___K___, ___Q___
-#define _________________DHORF_L2__________________ ___S___, ___R___, ___N___, ___T___, ___W___
-#define _________________DHORF_L3__________________ ___Z___, ___X___, ___M___, ___D___, ___B___
-
-#define _________________DHORF_R1__________________ KC_J,    ___F___, ___O___, ___U___, KC_COMM
-#define _________________DHORF_R2__________________ KC_Y,    ___C___, ___A___, ___E___, ___I___
-#define _________________DHORF_R3__________________ KC_P,    ___G___, KC_QUOT, KC_SCLN, KC_DOT
-
-
 #define _BASE \
-  _________________DHORF_L1__________________, _________________DHORF_R1__________________, \
-  _________________DHORF_L2__________________, _________________DHORF_R2__________________, \
-  _________________DHORF_L3__________________, _________________DHORF_R3__________________, \
+  ______________ENGRAMMM_2__L1_______________, ______________ENGRAMMM_2__R1_______________, \
+  ______________ENGRAMMM_2__L2_______________, ______________ENGRAMMM_2__R2_______________, \
+  ______________ENGRAMMM_2__L3_______________, ______________ENGRAMMM_2__R3_______________, \
            KC_BSPC,NAV_SPC,LT(KC_SLSH,SYM),     LT(SYM,KC_ENTER), LT(NUM,KC_BSPC), OSL(FUN)
 
 #define _UTIL \

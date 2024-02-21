@@ -1,7 +1,7 @@
 
 COMBO_ENABLE        = yes
 MOUSEKEY_ENABLE     = yes
-KEY_OVERRIDE_ENABLE = yes
+KEY_OVERRIDE_ENABLE = no
 REPEAT_KEY_ENABLE   = yes
 
 
