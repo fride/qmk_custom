@@ -116,7 +116,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         }
       }
       break;
-    case KA:
+    case MY_KA:
       if (record->event.pressed) {
         if (shifted) {
           SEND_STRING("Ka");
@@ -125,7 +125,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         }
         return false;
       }
-    case KU:
+    case MY_KU:
       if (record->event.pressed) {
         if (shifted) {
           SEND_STRING("Ku");
@@ -134,7 +134,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         }
         return false;
       }
-    case KAU:
+    case MY_KAU:
       if (record->event.pressed) {
         if (shifted) {
           SEND_STRING("Kau");

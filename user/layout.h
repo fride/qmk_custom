@@ -99,9 +99,9 @@ enum custom_keycodes {
 
   BI_PH,
 
-  KA,
-  KAU,
-  KU,
+  MY_KA,
+  MY_KAU,
+  MY_KU,
 };
 
 
@@ -323,7 +323,7 @@ enum custom_keycodes {
   ______________ENGRAMMM_2__L1_______________, ______________ENGRAMMM_2__R1_______________, \
   ______________ENGRAMMM_2__L2_______________, ______________ENGRAMMM_2__R2_______________, \
   ______________ENGRAMMM_2__L3_______________, ______________ENGRAMMM_2__R3_______________, \
-           KC_BSPC,NAV_SPC,LT(KC_SLSH,SYM),     LT(SYM,KC_ENTER), LT(NUM,KC_BSPC), OSL(FUN)
+           KC_BSPC,NAV_SPC,LT(KC_SLSH,SYM),     LT(SYM,KC_ENTER), OS_LSFT, OSL(FUN)
 
 #define _UTIL \
   _________________UTILS_L1__________________, _________________UTILS_R1__________________, \

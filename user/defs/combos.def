@@ -1,14 +1,14 @@
 /*
-Hands down - again ;)
-xz  wq m  g  j   #@ .: / * "! '?  
-s  c  n  t  k   ,; a  e  i  h  
-b  p  l  d  v   -+ u  o  y  f  
-r   ␣  
 */
 
 
-COMB(CMB_Q,         KC_Q,        ___F___, ___P___)
-COMB(CMB_Z,         KC_Z,        ___W___, ___V___)
+//ngram has a vew silly oatterns in german,
+COMB(CMB_KA,         MY_KA,        ___K___, ___J___)
+COMB(CMB_KU,         MY_KU,        ___K___, ___X___)
+COMB(CMB_KAU,        MY_KAU,       ___K___, ___J___,___X___)
+
+COMB(CMB_Q,         KC_Q,        ___W___, ___V___)
+COMB(CMB_Z,         KC_Z,        ___L___, ___W___)
 
 COMB(CMB_SLSH,         KC_SLSH,        ___O___, ___U___)
 COMB(CMB_EXLM,         KC_EXLM,        ___G___, KC_QUOT)
