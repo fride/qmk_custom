@@ -160,7 +160,7 @@ enum custom_keycodes {
 #define ___B___ KC_B
 #define ___C___ LCTL_T(KC_C)
 #define ___D___ RALT_T(KC_D)
-#define ___E___ KC_E
+#define ___E___ LGUI_T(KC_E)
 #define ___F___ KC_F
 #define ___G___ KC_G
 #define ___H___ RSFT_T(KC_H)
