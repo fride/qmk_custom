@@ -156,26 +156,26 @@ enum custom_keycodes {
 #define UM_CTL LCTL_T(KC_U)
 #define BSPACE LT(NUM,KC_BSPC)
 
-#define ___A___ RGUI_T(KC_A)
+#define ___A___ LALT_T(KC_A)
 #define ___B___ KC_B
-#define ___C___ RSFT_T(KC_C)
-#define ___D___ MEH_T(KC_D)
-#define ___E___ LALT_T(KC_E)
+#define ___C___ KC_C
+#define ___D___ LSFT_T(KC_D)
+#define ___E___ RGUI_T(KC_E)
 #define ___F___ KC_F
 #define ___G___ MEH_T(KC_G)
-#define ___H___ KC_H
+#define ___H___ MEH_T(KC_H)
 #define ___I___ RCTL_T(KC_I)
 #define ___J___ KC_J
 #define ___K___ KC_K
-#define ___L___ RALT_T(KC_L)
-#define ___M___ KC_M
-#define ___N___ LGUI_T(KC_N)
+#define ___L___ KC_L
+#define ___M___ RALT_T(KC_M)
+#define ___N___ RSFT_T(KC_N)
 #define ___O___ KC_O
 #define ___P___ KC_P
 #define ___Q___ KC_Q
-#define ___R___ LALT_T(KC_R)
+#define ___R___ LGUI_T(KC_R)
 #define ___S___ LCTL_T(KC_S)
-#define ___T___ LSFT_T(KC_T)
+#define ___T___ LALT_T(KC_T)
 #define ___U___ RALT_T(KC_U)
 #define ___V___ KC_V
 #define ___W___ KC_W
@@ -326,13 +326,13 @@ r   ␣
 */
 
 
-#define ______________MAGICSTURDY_L1_______________ KC_V,         ___M___,      KC_L,         KC_C,         KC_P
-#define ______________MAGICSTURDY_L2_______________ LCTL_T(KC_S), LALT_T(KC_T), LGUI_T(KC_R), LSFT_T(KC_D), KC_Y
-#define ______________MAGICSTURDY_L3_______________ KC_X,         KC_K,         KC_J,         ___G___,      KC_W
+#define ______________MAGICSTURDY_L1_______________ ___V___, ___M___, ___L___, ___C___, ___P___
+#define ______________MAGICSTURDY_L2_______________ ___S___, ___T___, ___R___, ___D___, ___Y___
+#define ______________MAGICSTURDY_L3_______________ ___X___, ___K___, ___J___, ___G___, ___W___
 
-#define ______________MAGICSTURDY_R1_______________ KC_B,    MAGIC,        KC_U,         ___O___,         KC_QUOT
-#define ______________MAGICSTURDY_R2_______________ KC_F,    RSFT_T(KC_N), RGUI_T(KC_E), LALT_T(KC_A),    RCTL_T(KC_I)
-#define ______________MAGICSTURDY_R3_______________ KC_Z,    ___H___,      KC_COMM,      KC_DOT,          KC_SCLN
+#define ______________MAGICSTURDY_R1_______________ ___B___, MAGIC,   ___U___, ___O___, ___Q___
+#define ______________MAGICSTURDY_R2_______________ ___F___, ___N___, ___E___, ___A___, ___I___
+#define ______________MAGICSTURDY_R3_______________ ___Z___, ___H___, KC_COMM, KC_DOT,  KC_QUOT
 
 #define _________________DHORF_L1__________________ ___V___, ___L___, ___H___, ___K___, ___Q___
 #define _________________DHORF_L2__________________ ___S___, ___R___, ___N___, ___T___, ___W___
@@ -344,10 +344,10 @@ r   ␣
 
 
 #define _BASE \
-  ______________HANDS_DOWN_L1________________, ______________HANDS_DOWN_R1________________, \
-  ______________HANDS_DOWN_L2________________, ______________HANDS_DOWN_R2________________, \
-  ______________HANDS_DOWN_L3________________, ______________HANDS_DOWN_R3________________, \
-           KC_BSPC,KC_R,LT(KC_SLSH,SYM),     LT(SYM,KC_ENTER), NAV_SPC, OSL(FUN)
+  ______________MAGICSTURDY_L1_______________, ______________MAGICSTURDY_R1_______________, \
+  ______________MAGICSTURDY_L2_______________, ______________MAGICSTURDY_R2_______________, \
+  ______________MAGICSTURDY_L3_______________, ______________MAGICSTURDY_R3_______________, \
+           KC_BSPC,NAV_SPC,LT(KC_SLSH,SYM),     LT(SYM,KC_ENTER), OS_LSFT, OSL(FUN)
 
 #define _UTIL \
   _________________UTILS_L1__________________, _________________UTILS_R1__________________, \

@@ -7,6 +7,8 @@ r   ␣
 */
 
 
+COMB(CMB_SCLN,         KC_SCLN,        KC_COMM, KC_DOT)
+
 COMB(CMB_SLSH,         KC_SLSH,        ___O___, ___U___)
 COMB(CMB_EXLM,         KC_EXLM,        ___G___, KC_QUOT)
 COMB(CMB_QUES,         KC_QUES,        KC_QUOT, KC_SCLN)
@@ -22,7 +24,7 @@ COMB(CMB_LCBR,         KC_LCBR,        ___K___, ___T___)
 COMB(CMB_RCBR,         KC_RCBR,        ___F___, ___C___)
 
 
-COMB(BOOT,            QK_BOOT,            KC_Z,    KC_QUOT)
+COMB(BOOT,            QK_BOOT,            ___V___, ___Q___)
 COMB(CMB_NUM,         NUMWORD,            OS_LSFT, NAV_SPC)
 COMB(CMB_CANCEL,	  CANCEL,		      LCTL_T(KC_S), RCTL_T(KC_I))
 COMB(CMB_TAB,	      KC_TAB,		      LALT_T(KC_R), LGUI_T(KC_N), LSFT_T(KC_T))
@@ -33,9 +35,6 @@ COMB(CMB_ESC,         ESC_SYM,         LGUI_T(KC_R), LSFT_T(KC_D))
 // TODO maybe replace it with th and friends?
 COMB(CMB_ESC_SYM,      ESC_SYM,        LGUI_T(KC_N), LSFT_T(KC_T))
 COMB(CMB_CLN_SYM,      COLON_SYM,      RSFT_T(KC_A), RGUI_T(KC_E))
-
-
-
 
 
 // thumbs numbers 
