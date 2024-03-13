@@ -7,7 +7,8 @@ r   ␣
 */
 
 
-COMB(CMB_SCLN,         KC_SCLN,        KC_COMM, KC_DOT)
+COMB(CMB_X,            KC_X,           KC_Z, RALT_T(KC_W))
+COMB(CMB_Q,            KC_Q,           RALT_T(KC_W), KC_M)
 
 COMB(CMB_SLSH,         KC_SLSH,        ___O___, ___U___)
 COMB(CMB_EXLM,         KC_EXLM,        ___G___, KC_QUOT)
