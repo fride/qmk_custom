@@ -329,7 +329,7 @@ r   ␣
   ______________HANDS_DOWN_L1________________, ______________HANDS_DOWN_R1________________, \
   ______________HANDS_DOWN_L2________________, ______________HANDS_DOWN_R2________________, \
   ______________HANDS_DOWN_L3________________, ______________HANDS_DOWN_R3________________, \
-           KC_BSPC,___R___,LT(KC_SLSH,SYM),     LT(SYM,KC_ENTER), NAV_SPC, OSL(FUN)
+           KC_BSPC,___R___,LT(KC_DEL,SYM),     LT(SYM,KC_ENTER), NAV_SPC, OSL(FUN)
 
 #define _UTIL \
   _________________UTILS_L1__________________, _________________UTILS_R1__________________, \
